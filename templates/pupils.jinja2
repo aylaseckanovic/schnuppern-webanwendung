@@ -10,4 +10,12 @@
 {% endfor %}
 </ul>
 
+<h2>Schüler hinzufügen</h2>
+
+<form method="POST" action="/add_pupil">
+    <label for="new_pupil">Name: </label>
+    <input id="new_pupil" name="new_pupil" type="text">
+    <input type="submit" value="Hinzufügen">
+</form>
+
 {% endblock %}

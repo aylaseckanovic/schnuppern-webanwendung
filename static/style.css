@@ -14,3 +14,23 @@ div.content {
     padding: 1em;
     background-color: #0277bd;
 }
+
+input[type="submit"] {
+    background-color: #58a5f0;
+    border: none;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #004c8c;
+    border-radius: 5px;
+    margin-left: 1em;
+}
+
+input[type="text"] {
+    background-color: #58a5f0;
+    border: 1px solid #004c8c;
+    padding: 0.5em 1em;
+}
+
+label {
+    margin-right: 1em;
+}
