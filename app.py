@@ -17,6 +17,12 @@ def get_pupils():
 def get_pupil(name):
     title = f'Notenverwaltung: {name}'
     subject_grades = pupils_grades[name]
-    print(subject_grades)
-    return render_template('grades.jinja2', title=title,
-                           subject_grades=subject_grades)
+    backlink = '/pupils'
+    backlink_caption = 'Zurück zur Schülerübersicht'
+    return render_template(
+        'grades.jinja2',
+        title=title,
+        subject_grades=subject_grades,
+        backlink=backlink,
+        backlink_caption=backlink_caption,
+    )
