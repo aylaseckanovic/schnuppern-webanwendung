@@ -1,0 +1,23 @@
+{% extends 'layout.jinja2' %}
+
+{% block content %}
+
+<p>
+    <a href="/pupils">zurück zur Schülerübersicht</a>
+</p>
+
+<h2>Noten</h2>
+
+<ul>
+{% for subject in subject_grades %}
+    <li>{{ subject }}
+        <ul>
+            {% for grade in subject_grades[subject] %}
+            <li>{{ grade }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
