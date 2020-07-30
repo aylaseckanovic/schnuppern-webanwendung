@@ -6,7 +6,10 @@
 
 <ul>
 {% for pupil in pupils %}
-    <li><a href="/pupils/{{ pupil }}">{{ pupil }}</a></li>
+    <li>
+        [<a href="/remove_pupil/{{ pupil }}">x</a>]
+        <a href="/pupils/{{ pupil }}">{{ pupil }}</a>
+    </li>
 {% endfor %}
 </ul>
 
@@ -14,7 +17,7 @@
 
 <form method="POST" action="/add_pupil">
     <label for="new_pupil">Name: </label>
-    <input id="new_pupil" name="new_pupil" type="text">
+    <input id="new_pupil" name="new_pupil_name" type="text">
     <input type="submit" value="Hinzufügen">
 </form>
 
