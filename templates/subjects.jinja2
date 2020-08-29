@@ -1,0 +1,24 @@
+{% extends 'layout.jinja2' %}
+
+{% block content %}
+
+<h2>Fächer</h2>
+
+<ul>
+{% for subject in subjects %}
+    <li>
+        [<a href="/remove_subject/{{ subject}}">x</a>] {{ subject }}
+    </li>
+{% endfor %}
+</ul>
+
+<h2>Fach hinzufügen</h2>
+
+<form method="POST" action="/add_subject">
+    <label for="new_subject">Name: </label>
+    <input id="new_subject" name="new_subject_name" type="text">
+    <input type="submit" value="Hinzufügen">
+</form>
+
+{% endblock %}
+

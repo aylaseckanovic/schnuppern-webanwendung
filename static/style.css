@@ -27,10 +27,15 @@ input[type="submit"] {
     margin-left: 1em;
 }
 
-input[type="text"] {
+input[type="text"], select, input[type="number"] {
     background-color: #58a5f0;
     border: 1px solid #004c8c;
     padding: 0.5em 1em;
+    margin-right: 1em;
+}
+
+input[type="number"] {
+    width: 6em;
 }
 
 label {

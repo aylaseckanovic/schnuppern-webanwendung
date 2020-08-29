@@ -6,7 +6,7 @@
 
 <ul>
 {% for subject in subject_grades %}
-    <li>{{ subject }}
+    <li>[⌀ {{ average_by_subject[subject] }}] {{ subject }}
         <ul>
             {% for grade in subject_grades[subject] %}
             <li>{{ grade }}</li>
@@ -14,6 +14,23 @@
         </ul>
     </li>
 {% endfor %}
+{% if average_overall %}
+    <li>[⌀ {{ "%.1f"|format(average_overall) }}] Total</li>
+{% endif %}
 </ul>
+
+<h2>Note hinzufügen</h2>
+
+<form method="POST" action="/{{ pupil_name }}/add_grade">
+    <label for="subject">Fach: </label>
+    <select id="subject" name="subject">
+        {% for subject in subjects %}
+            <option value="{{ subject.id }}">{{ subject.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="grade">Note: </label>
+    <input id="grade" name="grade" type="number" min="1.0" max="6.0" step="0.1" value="4.0">
+    <input type="submit" value="Hinzufügen">
+</form>
 
 {% endblock %}
