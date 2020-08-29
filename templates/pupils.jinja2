@@ -7,7 +7,7 @@
 <ul>
 {% for pupil in pupils %}
     <li>
-        [<a href="/remove_pupil/{{ pupil }}">x</a>]
+        [<a class="delete" data-name="{{ pupil }}" href="/remove_pupil/{{ pupil }}">x</a>]
         <a href="/pupils/{{ pupil }}">{{ pupil }}</a>
     </li>
 {% endfor %}

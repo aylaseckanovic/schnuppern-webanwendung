@@ -7,7 +7,7 @@
 <ul>
 {% for subject in subjects %}
     <li>
-        [<a href="/remove_subject/{{ subject}}">x</a>] {{ subject }}
+        [<a class="delete" data-name="{{ subject }}" href="/remove_subject/{{ subject }}">x</a>] {{ subject }}
     </li>
 {% endfor %}
 </ul>

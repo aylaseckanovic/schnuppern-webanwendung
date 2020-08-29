@@ -46,9 +46,11 @@ Inhalt stichwortartig zu beschreiben.
 
 ## Jinja2-Templates: Dynamische HTML-Strukturen
 
+# JavaScript (JS): Interaktives Verhalten im Browser
+
 # Structured Query Language (SQL): Zugriff auf Datenbanken
 
-# Python: Die eigentliche Programmlogik
+# Python: Serverseitige Programmlogik
 
 # Makefile: Erzeugen von Dateien anhand von Abhängigkeiten
 
