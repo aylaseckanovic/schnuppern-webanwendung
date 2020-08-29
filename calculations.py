@@ -21,3 +21,14 @@ def calculate_average(list_of_numbers):
 
 def round_to(number, granularity):
     return round(number * 1 / granularity) * granularity
+
+
+def calculate_deficiency_points(average_by_subject):
+    deficiency_points = 0.0
+    deficiency_threshold = 4.0
+    for average in average_by_subject.values():
+        deficiency = deficiency_threshold - average
+        if deficiency > 0:
+            deficiency_points += deficiency
+    print(deficiency_points)
+    return deficiency_points

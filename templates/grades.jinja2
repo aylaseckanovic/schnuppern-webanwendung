@@ -6,10 +6,25 @@
 
 <ul>
 {% for subject in subject_grades %}
-    <li>[⌀ {{ average_by_subject[subject] }}] {{ subject }}
+    {% set average = average_by_subject[subject] %}
+    {% if average < 4 %}
+        {% set style = 'bad' %}
+    {% elif average < 5 %}
+        {% set style = 'ok' %}
+    {% else %}
+        {% set style = 'good' %}
+    {% endif %}
+    <li>[⌀ <span class="{{ style }}">{{ average_by_subject[subject] }}</span>] {{ subject }}
         <ul>
             {% for grade in subject_grades[subject] %}
-            <li>{{ grade }}</li>
+            {% if grade < 4 %}
+                {% set style = 'bad' %}
+            {% elif grade < 5 %}
+                {% set style = 'ok' %}
+            {% else %}
+                {% set style = 'good' %}
+            {% endif %}
+            <li><span class="{{ style }}">{{ grade }}</li>
             {% endfor %}
         </ul>
     </li>
@@ -18,6 +33,15 @@
     <li>[⌀ {{ "%.1f"|format(average_overall) }}] Total</li>
 {% endif %}
 </ul>
+
+{% if deficiency_points > 0 %}
+    {% if deficiency_points > 1.5 %}
+        {% set style = 'bad' %}
+    {% else %}
+        {% set style = 'ok' %}
+    {% endif %}
+    <p>Mangelpunkte: <span class="{{ style }}">{{ deficiency_points }}</span></p>
+{% endif %}
 
 <h2>Note hinzufügen</h2>
 

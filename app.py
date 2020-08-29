@@ -5,8 +5,9 @@ from flask import render_template
 from flask import request
 from flask import send_from_directory
 
-from average import calculate_subject_averages
-from average import calculate_overall_average
+from calculations import calculate_subject_averages
+from calculations import calculate_overall_average
+from calculations import calculate_deficiency_points
 from data import DataBase
 
 app = Flask(__name__)
@@ -47,6 +48,7 @@ def get_pupil(name):
     average_by_subject = calculate_subject_averages(subject_grades)
     average_overall = calculate_overall_average(average_by_subject)
     subjects = db.load_subjects()
+    deficiency_points = calculate_deficiency_points(average_by_subject)
     return render_template(
         'grades.jinja2',
         title=title,
@@ -54,6 +56,7 @@ def get_pupil(name):
         subject_grades=subject_grades,
         average_by_subject=average_by_subject,
         average_overall=average_overall,
+        deficiency_points=deficiency_points,
         backlink=backlink,
         backlink_caption=backlink_caption,
         subjects=subjects,
