@@ -8,8 +8,42 @@ from scipy.stats import norm
 
 connection = sqlite3.connect('grades.db')
 
-pupils = ['Alois', 'Bettina', 'Cyrille', 'Daniel', 'Ernst', 'Franziska']
-subjects = ['Mathematik', 'Deutsch', 'Englisch', 'Sport', 'Musik']
+pupils = [
+    'Alois',
+    'Bettina',
+    'Carlo',
+    'Daniela',
+    'Ernst',
+    'Franziska',
+    'Gustav',
+    'Helene',
+    'Igor',
+    'Jana',
+    'Kilian',
+    'Lena',
+    'Michael',
+    'Nora',
+    'Oliver',
+    'Paula',
+    'Quentin',
+    'Rita',
+    'Silvio',
+    'Thea',
+    'Ulrich',
+    'Verena',
+    'Walter',
+    'Xenia',
+    'Yannick',
+    'Zoe']
+
+subjects = [
+    'Mathematik',
+    'Deutsch',
+    'Englisch',
+    'Französisch',
+    'Sport',
+    'Musik']
+
 c = connection.cursor()
 
 pupil_ids = {}
