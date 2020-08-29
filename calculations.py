@@ -15,8 +15,10 @@ def calculate_overall_average(average_by_subject):
     return round_to(total / len(average_by_subject), 0.1)
 
 
-def calculate_average(list_of_numbers):
-    return round_to(sum(list_of_numbers) / len(list_of_numbers), 0.5)
+def calculate_average(list_of_numbers, granularity=0.5):
+    if len(list_of_numbers) < 1:
+        return None
+    return round_to(sum(list_of_numbers) / len(list_of_numbers), granularity)
 
 
 def round_to(number, granularity):

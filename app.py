@@ -5,9 +5,10 @@ from flask import render_template
 from flask import request
 from flask import send_from_directory
 
-from calculations import calculate_subject_averages
-from calculations import calculate_overall_average
+from calculations import calculate_average
 from calculations import calculate_deficiency_points
+from calculations import calculate_overall_average
+from calculations import calculate_subject_averages
 from data import DataBase
 
 app = Flask(__name__)
@@ -27,6 +28,7 @@ def index():
     pages = {
         'Schüler': '/pupils',
         'Fächer': '/subjects',
+        'Notenüberblick': '/overview',
     }
     return render_template('index.jinja2', title=title, pages=pages)
 
@@ -112,3 +114,53 @@ def add_grade(pupil):
     pupil_id = db.load_pupil_id(pupil)
     db.insert_grade(subject_id, pupil_id, grade_value)
     return get_pupil(pupil)
+
+
+@app.route('/overview', methods=['GET'])
+def overview():
+    subjects = db.load_subjects()
+    subject_names = [s.name for s in subjects]
+
+    entries = []
+    pupils = db.load_pupils()
+    for pupil in pupils:
+        averages = []
+        subject_grades = db.load_subject_grades(pupil.name)
+        average_by_subject = calculate_subject_averages(subject_grades)
+        for subject in subject_names:
+            if subject in average_by_subject:
+                averages.append(average_by_subject[subject])
+            else:
+                averages.append(0)
+        average_overall = calculate_overall_average(average_by_subject)
+        entries.append([pupil.name] + averages + [average_overall])
+
+    sort_by = request.args.get('sort')
+    if sort_by == 'Schüler':
+        print('order by name')
+        entries.sort(key=lambda e: e[0])
+    elif sort_by == 'Durchschnitt':
+        entries.sort(key=lambda e: e[len(e) - 1], reverse=True)
+        print('order by average')
+    elif sort_by:
+        if sort_by in subject_names:
+            pos = subject_names.index(sort_by)
+            entries.sort(key=lambda e: e[pos + 1], reverse=True)
+
+    summary = ['⌀']
+    summary_cols = subject_names + ['Durchschnitt']
+    for subject in summary_cols:
+        averages = []
+        offset = 1 + summary_cols.index(subject)
+        for entry in entries:
+            if entry[offset]:
+                averages.append(entry[offset])
+        summary.append(calculate_average(averages, granularity=0.01))
+
+    return render_template(
+        'overview.jinja2',
+        title='Notenüberblick',
+        table_header=['Schüler'] + subject_names + ['Durchschnitt'],
+        table_body=entries,
+        table_footer=summary,
+    )

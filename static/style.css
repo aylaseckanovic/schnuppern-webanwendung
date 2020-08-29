@@ -53,3 +53,16 @@ label {
 .good {
     color: #88cc88;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid white;
+    padding: 0.5em 1em;
+}
+
+div.scroll {
+    overflow: auto;
+}

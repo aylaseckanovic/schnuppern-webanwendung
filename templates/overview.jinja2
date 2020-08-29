@@ -1,0 +1,53 @@
+{% extends 'layout.jinja2' %}
+
+{% block content %}
+
+<div class="scroll">
+    <table>
+        <tr>
+            {% for col in table_header %}
+                <td><a href="/overview?sort={{ col }}"><strong>{{ col }}</strong></a></td>
+            {% endfor %}
+        </tr>
+        {% for row in table_body %}
+            <tr>
+            {% for col in row %}
+                {% if col|float(-1) != -1 %}
+                    {% if col == 0 %}
+                        {% set col = '-' %}
+                    {% else %}
+                        {% if col < 4.0 %}
+                            {% set style = 'bad' %}
+                        {% elif col < 5.0 %}
+                            {% set style = 'ok' %}
+                        {% else %}
+                            {% set style = 'good' %}
+                        {% endif %}
+                        {% set col = "%.2f"|format(col) %}
+                    {% endif %}
+                    <td><span class="{{ style }}">{{ col }}</span></td>
+                {% else %}
+                    <td><a href="/pupils/{{ col}}">{{ col }}</a></td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        <tr>
+            {% for col in table_footer %}
+                {% if col|float(-1) != -1 %}
+                    {% if col < 4.0 %}
+                        {% set style = 'bad' %}
+                    {% elif col < 5.0 %}
+                        {% set style = 'ok' %}
+                    {% else %}
+                        {% set style = 'good' %}
+                    {% endif %}
+                    {% set col = "%.2f"|format(col) %}
+                {% endif %}
+                <td><span class="{{ style }}">{{ col }}</span></td>
+            {% endfor %}
+        </tr>
+    </table>
+<div>
+
+{% endblock %}
