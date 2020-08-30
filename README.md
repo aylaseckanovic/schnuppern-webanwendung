@@ -16,6 +16,8 @@ Run the application and [open](http://localhost:5000) it:
 
     ./run.sh
 
+Work through the exercises (`webanwendung.pdf`)
+
 # Dependencies
 
 - Python 3
