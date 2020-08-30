@@ -10,11 +10,12 @@ Viele Softwarelösungen werden heutzutage als Web-Anwendung umgesetzt. Gegenübe
 herkömmlichen Programmen, die zunächst auf einem Computer installiert werden
 müssen, haben Web-Anwendungen viele Vorteile. Man kann von jedem Computer auf
 sie zugreifen, sofern ein Browser installiert und eine Internetverbindung zur
-Verfügung steht. Eine Installation der Anwendung auf dem Computer entfällt.
+Verfügung steht. Auch funktioniert Sie auf allen Betriebssystemen ohne
+Anpassungen.
 
 In diesem Dokument findest Du Übungen zu einer beispielhaften Web-Anwendung. Es
 handelt sich dabei um eine kleine Notenverwaltung, die mit der
-Programmiersprache Python und dem Framework Flask etnwickelt worden ist.
+Programmiersprache Python und dem Framework Flask entwickelt worden ist.
 
 # Einrichten der Umgebung
 
@@ -22,27 +23,27 @@ Der Instruktor stellt Dir eine Umgebung bereit, womit Du einerseits die
 Web-Anwendung ausführen, und sie andererseits weiterentwickeln kannst. Sollte
 etwas nicht funktionieren, frage einfach beim Instruktor nach.
 
-Mache Dich mit der Notenverwaltung etwas bekannt. Du kannst Informationen
-einsehen, hinzufügen und löschen. Dabei kann nichts kaputt gehen. (Andernfalls
-kann der Instruktor die Datenbank wiederherstellen.)
+Mache Dich mit der [Notenverwaltung](http://localhost:5000/) etwas bekannt. Du
+kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts kaputt
+gehen. (Andernfalls kann der Instruktor die Datenbank wiederherstellen.)
 
-# Übungen
+# Aufgaben
 
-Bei den folgenden Übungen kannst Du Dich mit dem Aufbau einer modernen
+Mit den folgenden Aufgaben kannst Du Dich mit dem Aufbau einer modernen
 Web-Anwendung beschäftigen. Dabei lernst Du verschiedenste Technologien kennen,
 die man als Web-Entwickler heutzutage kennen sollte. (Für manche Technologien
 gibt es auch Alternativen.)
 
-Halte die Lösungen in einer separaten Textdatei fest. (Speichere diese häufig
+Halte Deine Lösungen in einer separaten Textdatei fest. (Speichere diese häufig
 ab, um keine Informationen zu verlieren.) Obwohl man eine Textdatei nicht wie
 ein Word-Dokument formatieren kann, sollst Du diese möglichst gut strukturieren
-und lesbar formatieren.
+und lesbar formatieren. Bewahre diese Datei bis zum Schluss auf!
 
-Es geht nicht darum, alle Übungen möglichst korrekt und vollständig zu lösen,
+Es geht nicht darum, alle Aufgaben möglichst korrekt und vollständig zu lösen,
 sondern einen möglichst breit gefächerten Eindruck über die verschiedenen
 Technologien zu erhalten. Wenn Du bei einer Aufgabe lange anstehst, frage den
 Instruktor um Hilfe. (Alle beschriebenen Technologien zu beherrschen ist nicht
-Ziel des heutigen Nachmittags, sondern einer vierjährigen Lehre.)
+das Ziel des heutigen Nachmittags, sondern dasjenige einer vierjährigen Lehre.)
 
 ## Zurechtfinden im Verzeichnis
 
@@ -55,7 +56,7 @@ Arbeitsverzeichnis finden kannst.
 
 **Aufgabe 1.2**: Versuche die verschiedenen Dateien zu öffnen. Schaue Dir den
 Inhalt der Dateien an, und versuche zu verstehen, was dieser Inhalt wohl
-bedeuten könne. Suche Dir pro Dateiendung eine Datei aus, und versuche deren
+bedeuten könnte. Suche Dir pro Dateiendung eine Datei aus, und versuche deren
 Inhalt stichwortartig zu beschreiben.
 
 ## Cascading Style Sheets (CSS): Definition der Darstellung
@@ -85,12 +86,12 @@ Welche Angaben musst Du ändern?
 Die Struktur einer Webseite wird in HTML angegeben. Da eine Web-Anwendung nicht
 bloss _statische_ Seiten (mit immer gleichbleibendem Inhalt), sondern
 _dynamische_ Seiten verwendet, ist die HTML-Struktur in sogenannten _Templates_
-(Vorlagen) definiert. Du findest also keine `*.html`-Dateien im vorliegenden
+(Vorlagen) definiert. Du findest also keine `.html`-Dateien im vorliegenden
 Projekt.
 
 HTML basiert auf sogenannten _Tags_. Dies sind Elemente, die in spitzen 
 Klammern eingeschlossen sind. Die meisten Tag müssen geschlossen werden. Hier
-ein Beispiel für einen Titel:
+ein Beispiel für einen Titel (_Headline 1_):
 
     <h1>Meine Webseite</h1>
 
@@ -102,7 +103,7 @@ bei dem ein Wort speziell hervorgehoben wird:
 
 ### Jinja2 Templates: Vorlagen für dynamisches HTML
 
-Im Verzeichnis `templates` findest Du verschiedene Dateien mit der Endung
+Im Verzeichnis `templates/` findest Du verschiedene Dateien mit der Endung
 `.jinja2`. Jede Datei beschreibt eine andere Seite bzw. einen anderen
 Seitenbereich der Web-Anwendung.
 
@@ -161,7 +162,7 @@ Versehen Daten löscht.
 **Aufgabe 4.1**: Öffne die Datei `static/script.js`. Versuche den Code zu
 verstehen und beschreibe stichwortartig, was hier ungefähr passieren könnte.
 
-**Aufgabe 4.2**: Die Link-Elemente werden mittels
+**Aufgabe 4.2**: Die Link-Elemente werden mithilfe der eingebauten Funktion
 `doc.querySelectorAll('a.delete')` ermittelt. Kommt Dir die Angabe `a.delete`
 bekannt vor? Wo gibt es ähnliche Bezeichnungen?
 
@@ -169,7 +170,7 @@ bekannt vor? Wo gibt es ähnliche Bezeichnungen?
 Notenverwaltung neu mit `[Ctrl]+[Shift]+[R]`, damit der JavaScript-Code sicher
 nachgeladen wird. Versuche nun ein paar Schüler zu löschen. Die entsprechende
 Bestätigung kannst du einmal verneinen und einmal bestätigen. Was fällt Dir
-dabei auf? Was bedeutet `preventDefault` auf Deutsch übersetzt? Was für eine
+dabei auf? Was bedeutet "`preventDefault`" auf Deutsch übersetzt? Was für eine
 Bedeutung hat es? Was könnte das Ausrufezeichen (`!`) in der Zeile darüber
 bedeuten?
 
@@ -232,7 +233,7 @@ Das folgende Programm kombiniert all diese Elemente:
 
 - Das Programm verwendet die Variablen `eingabe` und `wiederholungen`.
 - Es gibt verschiedene Anweisungen zur Eingabe (`input`), zur Ausgabe (`print`)
-  und Zuweisungen (`=`)
+  und Zuweisungen (`=`).
 - Die ersten beiden Anweisungen werden als Sequenz abgearbeitet.
 - Die Prüfung, ob `wiederholungen` kleiner als 0 ist, ist eine Entscheidung: Je
   nach Ergebnis wird anderer Code ausgeführt.
@@ -248,13 +249,14 @@ Wiederholung gehört, immer gleich eingerückt wird.
 verschiedenen Dateien passiert. Notiere deine Ideen stichwortartig.
 
 **Aufgabe 6.2**: In der Datei `calculations.py` gibt es eine Funktion namens
-`calculate_deficiency_points`. Diese gibt immer den Wert `0.0` zurück (`return
-0.0`). Die Funktion wurde noch nicht ausprogrammiert. Lies die Anweisungen in
-der Funktion durch, und versuche, sie korrekt auszuprogrammieren. (Die Zeilen,
-die mit `#` beginnen, sind Kommentare, und werden nicht ausgeführt.) Um die
-Funktion zu testen kannst du im [Notenüberblick](http://localhost:5000/overview)
-einen Schüler mit ungenügenden Noten öffnen. Die Mangelpunkte sollten dann
-oberhalb des Titels _Note hinzufügen_ angezeigt werden.
+`calculate_deficiency_points`, welche die Mangelpunkte eines Schülers berechnet.
+Diese gibt immer den Wert `0.0` zurück. Die Funktion wurde noch nicht
+ausprogrammiert. Lies die Anweisungen in der Funktion durch, und versuche, sie
+korrekt auszuprogrammieren. (Die Zeilen, die mit `#` beginnen, sind Kommentare,
+und werden nicht ausgeführt.) Um die Funktion zu testen kannst du im
+[Notenüberblick](http://localhost:5000/overview) einen Schüler mit ungenügenden
+Noten öffnen. Die Mangelpunkte sollten dann oberhalb des Titels _Note
+hinzufügen_ angezeigt werden.
 
 **Aufgabe 6.3**: Öffne die Datei `app.py`. Diese enthält verschiedene
 Funktionen, die jeweils mit der Zeile `@app.route` beginnen. Öffne die
@@ -275,15 +277,15 @@ erzeugt. Die Testdaten werden hingegen mit einem Python-Skript
 `insert_test_data.py` erzeugt. Warum wird nicht an beiden Stellen einfach SQL
 verwendet?
 
-## Shell-Skripte: Nützliche Skripts für verschiedene Aufgaben
+## Shell-Skripte: Nützliche Helferlein für verschiedene Aufgaben
 
 Das Projekt enthält zwei Dateien mit der Endung `.sh`: `run.sh` zum Ausführen
 der Web-Anwendung, und `install.sh` zum Installieren derselben. Dies sind kleine
-Skripte, mit denen verschiedene Abläufe automatisiert werden können.
+Skripte, mit denen verschiedene Abläufe automatisiert werden.
 
 **Aufgabe 8.1**: Öffne die beiden Dateien. Findest Du darin Referenzen auf
-andere Dateien? Wenn ja, öffne diese, und notiere Dir die Dateinamen. Was
-enthalten diese Dateien?
+andere Dateien, die Du bereits kennst? Wenn ja, öffne diese, und notiere Dir die
+Dateinamen. Was enthalten diese Dateien?
 
 Weitere Übungen zu Shell-Skripten folgen im nächsten Block.
 
@@ -291,10 +293,11 @@ Weitere Übungen zu Shell-Skripten folgen im nächsten Block.
 
 Du hast eine sehr kleine Web-Anwendung kennengelernt. Selbst ein erfahrener
 Programmierer benötigt ungefähr einen halben Arbeitstag, um so eine Anwendung zu
-erstellen. Damit eine solche Anwendung produktiv eingesetzt werden könnte,
+erstellen. Damit eine solche Anwendung produktiv eingesetzt werden kann,
 benötigt es aber noch einiges an Zusatzaufwand.
 
 **Aufgabe 9.1**: Was gefällt Dir an der Notenverwaltung? Was stört Dich an ihr?
+Würdest Du das Programm Deinen Lehrern empfehlen oder Ihnen davon abraten?
 
 **Aufgabe 9.2**: Welche Probleme wären noch zu lösen, um die Notenverwaltung im
 Internet als Produkt (_«Software as a Service»_) anbieten zu können? Haben diese
@@ -310,3 +313,7 @@ In den Übungen hast Du nicht nur diese Technologien kennengelernt, sondern auch
 eine Idee davon erhalten, wie diese Technologien zusammenarbeiten. Ein
 Web-Entwickler muss also nicht nur einzelne Technologien beherrschen, sondern
 auch wissen, in welchem Zusammenhang diese stehen.
+
+Eine Anwendung muss nicht nur entwickelt, sondern auch gewartet, betrieben und
+vermarktet werden. Ein Softwareentwickler muss auch in diesen Bereichen
+mithelfen.
