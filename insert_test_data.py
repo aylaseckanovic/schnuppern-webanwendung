@@ -58,15 +58,16 @@ for subject in subjects:
     new_id = c.execute('SELECT last_insert_rowid()')
     subject_ids[subject] = new_id.lastrowid
 
-xs = np.linspace(-3.5, +1.5, 500)
+xs = np.linspace(-2.0, +2.0, 20)
 ys = norm.pdf(xs)
 
 for pupil, pupil_id in pupil_ids.items():
-    baseline = 4.5 + random.choices(xs, weights=ys, k=1)[0]
+    baseline = random.choice([3.5, 4.0, 4.5, 5.0, 5.5])
     for subject, subject_id in subject_ids.items():
-        deviations = random.choices(xs, weights=ys, k=random.randint(1, 10))
+        deviations = random.choices(xs, weights=ys, k=random.randint(2, 8))
         for deviation in deviations:
             grade = round((baseline + deviation) * 10) / 10
+            grade = max(1, min(6, grade))
             c.execute('INSERT INTO grade (pupil_id, subject_id, grade) '
                       f'VALUES ({pupil_id}, {subject_id}, {grade})')
 
