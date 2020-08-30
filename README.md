@@ -12,7 +12,7 @@ Create the database:
 
     make grades.db
 
-Run the application:
+Run the application and [open](http://localhost:5000) it:
 
     ./run.sh
 
