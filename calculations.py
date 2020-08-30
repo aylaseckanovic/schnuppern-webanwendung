@@ -26,11 +26,21 @@ def round_to(number, granularity):
 
 
 def calculate_deficiency_points(average_by_subject):
+    # standardmässig gibt es keine Mangelpunkte
     deficiency_points = 0.0
-    deficiency_threshold = 4.0
+
+    # gehe alle Notendurchschnitte durch
     for average in average_by_subject.values():
-        deficiency = deficiency_threshold - average
-        if deficiency > 0:
-            deficiency_points += deficiency
-    print(deficiency_points)
+        # Falls der Notendurchschnitt ungenügend ist (d.h. kleiner als 4.0),
+        # gibt es Mangelpunkte. Die Anzahl Mangelpunkte pro Fach ist die
+        # Differenz zwischen 4.0 und der erreichten Note.
+        # TODO: Berechne die Mangelpunkte für das jeweilige Fach und addiere
+        # diese zu deficiency_points. Beispiel: für die Note 3.5 gibt es 0.5
+        # Mangelpunkte, für die Note 3.0 gibt es 1.0 Mangelpunkte, und für die
+        # Note 4.5 gibt es 0.0 Mangelpunkte.
+
+        # TODO: diese Zeile kann gelöscht werden, sobald der Code fertig ist.
+        pass
+
+    # hier wird das Resultat zurückgegeben
     return deficiency_points

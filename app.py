@@ -137,11 +137,9 @@ def overview():
 
     sort_by = request.args.get('sort')
     if sort_by == 'Schüler':
-        print('order by name')
         entries.sort(key=lambda e: e[0])
     elif sort_by == 'Durchschnitt':
         entries.sort(key=lambda e: e[len(e) - 1], reverse=True)
-        print('order by average')
     elif sort_by:
         if sort_by in subject_names:
             pos = subject_names.index(sort_by)
