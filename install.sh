@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
 rm -rf env
-python -m venv env
+python3 -m venv env
 . env/bin/activate
-pip install --upgrade pip -r requirements.txt
+pip3 install --upgrade pip -r requirements.txt
