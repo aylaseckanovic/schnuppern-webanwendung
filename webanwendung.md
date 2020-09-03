@@ -2,7 +2,7 @@
 title: 'Übung Web-Anwendung'
 subtitle: 'Eine Notenverwaltung mit Python und Flask'
 author: 'Patrick Bucher, seantis GmbH'
-date: 29.08.2020
+date: 03.09.2020
 lang: de
 ---
 
