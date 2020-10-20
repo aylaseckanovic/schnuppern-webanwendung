@@ -2,15 +2,15 @@
 title: 'Übung Web-Anwendung'
 subtitle: 'Eine Notenverwaltung mit Python und Flask'
 author: 'Patrick Bucher, seantis GmbH'
-date: 03.09.2020
+date: 20.10.2020
 lang: de
 ---
 
 Viele Softwarelösungen werden heutzutage als Web-Anwendung umgesetzt. Gegenüber
 herkömmlichen Programmen, die zunächst auf einem Computer installiert werden
 müssen, haben Web-Anwendungen viele Vorteile. Man kann von jedem Computer auf
-sie zugreifen, sofern ein Browser installiert und eine Internetverbindung zur
-Verfügung steht. Auch funktioniert Sie auf allen Betriebssystemen ohne
+sie zugreifen, sofern ein Browser installiert ist und eine Internetverbindung
+zur Verfügung steht. Auch funktioniert Sie auf allen Betriebssystemen ohne
 Anpassungen.
 
 In diesem Dokument findest Du Übungen zu einer beispielhaften Web-Anwendung. Es
@@ -25,7 +25,7 @@ etwas nicht funktionieren, frage einfach beim Instruktor nach.
 
 Mache Dich mit der [Notenverwaltung](http://localhost:5000/) etwas bekannt. Du
 kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts kaputt
-gehen. (Andernfalls kann der Instruktor die Datenbank wiederherstellen.)
+gehen. (Bei Datenverlust kann der Instruktor die Datenbank wiederherstellen.)
 
 # Aufgaben
 
@@ -90,7 +90,7 @@ _dynamische_ Seiten verwendet, ist die HTML-Struktur in sogenannten _Templates_
 Projekt.
 
 HTML basiert auf sogenannten _Tags_. Dies sind Elemente, die in spitzen 
-Klammern eingeschlossen sind. Die meisten Tag müssen geschlossen werden. Hier
+Klammern eingeschlossen sind. Die meisten Tags müssen geschlossen werden. Hier
 ein Beispiel für einen Titel (_Headline 1_):
 
     <h1>Meine Webseite</h1>
@@ -189,7 +189,7 @@ Daten zu kontrollieren (DCL: _Data Control Language_).
 
 **Aufgabe 5.1**: Die Datei `tables.sql` enthält die Definition der
 Datenbanktabellen. Jede Tabelle hat einen Namen und mehrere Spalten. Eine
-Tabelle hat zusätzlich Beziehnungen zu anderen Tabellen. Versuche diese Tabellen
+Tabelle hat zusätzlich Beziehungen zu anderen Tabellen. Versuche diese Tabellen
 auf einem Blatt Papier aufzuzeichnen. Beispieldaten (zwei, drei pro Tabelle
 genügen) kannst du erfinden und als Zeilen eintragen.
 
@@ -286,8 +286,6 @@ Skripte, mit denen verschiedene Abläufe automatisiert werden.
 **Aufgabe 8.1**: Öffne die beiden Dateien. Findest Du darin Referenzen auf
 andere Dateien, die Du bereits kennst? Wenn ja, öffne diese, und notiere Dir die
 Dateinamen. Was enthalten diese Dateien?
-
-Weitere Übungen zu Shell-Skripten folgen im nächsten Block.
 
 ## Ausblick
 
