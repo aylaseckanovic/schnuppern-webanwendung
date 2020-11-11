@@ -47,9 +47,9 @@ das Ziel des heutigen Nachmittags, sondern dasjenige einer vierjährigen Lehre.)
 
 ## Zurechtfinden im Verzeichnis
 
-Das Arbeitsverzeichnis `flask-demo-app` enthält verschiedene Unterverzeichnisse
-und Dateien. (Hinweis: die Verzeichnisse `env` und `__pycache__` kannst Du für
-alle Übungen ignorieren, aber nicht löschen!)
+Das Arbeitsverzeichnis `schnuppern-webanwendung` enthält verschiedene
+Unterverzeichnisse und Dateien. (Hinweis: die Verzeichnisse `env` und
+`__pycache__` kannst Du für alle Übungen ignorieren, aber nicht löschen!)
 
 **Aufgabe 1.1**: Stelle eine Liste mit allen Dateiendungen zusammen, die Du im
 Arbeitsverzeichnis finden kannst.
