@@ -42,7 +42,10 @@ subjects = [
     'Englisch',
     'Französisch',
     'Sport',
-    'Musik']
+    'Musik',
+    'Werken',
+    'Biologie',
+    'Physik']
 
 c = connection.cursor()
 

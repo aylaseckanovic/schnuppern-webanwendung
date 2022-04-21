@@ -4,15 +4,16 @@
 
 body {
     font-family: sans-serif;
-    background-color: #004c8c;
+    background-color:#004c8c;;
     margin: 1em auto;
     max-width: 1000px;
     min-width: 800px;
+    
 }
 
 div.content {
     padding: 1em;
-    background-color: #0277bd;
+    background-color: #004c8c;
     border: 2px solid #58a5f0;
     border-radius: 5px;
 }

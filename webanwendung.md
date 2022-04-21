@@ -81,6 +81,21 @@ Tool](https://material.io/resources/color/), um ein neues Farbschema zu
 kreieren. Du musst die alten Farben in `style.css` durch die neuen ersetzen.
 Welche Angaben musst Du ändern?
 
+**Aufgabe 2.3**: Die Notenverwaltung ist mit einer standart Schrift gestalltet worden.
+Findest du den Code-Block für die Gestalltung der Schrift? Versuche eine andere Schriftart anzuwenden.
+Welche Angaben musst du ändern? Kannst du auch die Schriftgrösse und den Schriftstil ändern?. DIese Seite
+könnte dir dabei behilflich sein (http://www.w3big.com/de/css/css-font.html). Notiere deine Feststellungen.
+
+**Aufgabe 2.4** In der `static/style.css` Datei siehtst du bei jedem Block-Anfang gelbe Wörter. Kannst du
+dir vorstellen was diese Wörter bedeuten? Was ist der Unterschied zwischen denen die einen Punkt am Anfang haben und
+denen ohne Punkt? Kannst du weitere Unterschiede feststellen? Falls du nicht weiter kommst -> (http://www.css-lernen.net/klassen.html)
+
+**Aufgabe 2.5** Nun hast du CSS kennengelernt. Mache eine kurze Zusammenfassung über die Aufgaben oder über neu gelerntes. Beantworte
+dabei folgende Fragen:
+- Hast du bereits mal etwas mit CSS gemacht, wenn ja was?
+- Konntest du etwas neues lernen?
+- Waren die Links hilfreich?
+
 ## Hypertext Markup Language (HTML): Beschreibung der Seitenstruktur
 
 Die Struktur einer Webseite wird in HTML angegeben. Da eine Web-Anwendung nicht
@@ -248,7 +263,12 @@ Wiederholung gehört, immer gleich eingerückt wird.
 Öffne diese, überfliege den Code, und überlege Dir, was wohl in den
 verschiedenen Dateien passiert. Notiere deine Ideen stichwortartig.
 
-**Aufgabe 6.2**: In der Datei `calculations.py` gibt es eine Funktion namens
+**Aufgabe 6.2**: Villeicht hast du beim überfliegen des Codes, in den verschiedenen Dateien
+gemerkt, das einige Code-Blöcke mit `def` beginnen. Kannst du dir vorstellen, was das bedeutet?
+Versuche zuerst selber zu überlegen, was das sein könnte. Notiere deine Vermutungen. Danach kannst du folgendes
+Kapitel lesen und dir wichtige Sachen für die nächsten Aufgaben notieren -> (https://www.python-lernen.de/funktionen-in-python.htm)
+
+**Aufgabe 6.3**: In der Datei `calculations.py` gibt es eine Funktion namens
 `calculate_deficiency_points`, welche die Mangelpunkte eines Schülers berechnet.
 Diese gibt immer den Wert `0.0` zurück. Die Funktion wurde noch nicht
 ausprogrammiert. Lies die Anweisungen in der Funktion durch, und versuche, sie
@@ -258,11 +278,15 @@ und werden nicht ausgeführt.) Um die Funktion zu testen kannst du im
 Noten öffnen. Die Mangelpunkte sollten dann oberhalb des Titels _Note
 hinzufügen_ angezeigt werden.
 
-**Aufgabe 6.3**: Öffne die Datei `app.py`. Diese enthält verschiedene
+**Aufgabe 6.4**: Öffne die Datei `app.py`. Diese enthält verschiedene
 Funktionen, die jeweils mit der Zeile `@app.route` beginnen. Öffne die
 verschiedenen Seiten der [Notenverwaltung](http://localhost:5000/) im Browser.
 Schaue Dir die Adresszeile genau an. Kannst Du anhand der Adresse die
 verschiedenen Seiten den verschiedenen Funktionen in `app.py` zuordnen?
+
+**Aufgabe 6.5**: Du hast sicher bemerkt, dass sich in den verschiedenen Python Dateien oben die sogenannten Imports (auf Deutsch Module)
+befinden. Erkläre kurz was Imports sind, welche Arten es gibt und welche Regelung man befolgt.
+
 
 ## Makefile: Erzeugen von Dateien anhand von Abhängigkeiten
 
