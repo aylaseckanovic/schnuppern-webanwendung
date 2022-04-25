@@ -81,12 +81,12 @@ Tool](https://material.io/resources/color/), um ein neues Farbschema zu
 kreieren. Du musst die alten Farben in `style.css` durch die neuen ersetzen.
 Welche Angaben musst Du ändern?
 
-**Aufgabe 2.3**: Die Notenverwaltung ist mit einer standart Schrift gestalltet worden.
-Findest du den Code-Block für die Gestalltung der Schrift? Versuche eine andere Schriftart anzuwenden.
-Welche Angaben musst du ändern? Kannst du auch die Schriftgrösse und den Schriftstil ändern?. DIese Seite
+**Aufgabe 2.3**: Die Notenverwaltung ist mit einer standart Schrift gestaltet worden.
+Findest du den Code-Block für die Gestaltung der Schrift? Versuche eine andere Schriftart anzuwenden.
+Welche Angaben musst du ändern? Kannst du auch die Schriftgrösse und den Schriftstil ändern?. Diese Seite
 könnte dir dabei behilflich sein (http://www.w3big.com/de/css/css-font.html). Notiere deine Feststellungen.
 
-**Aufgabe 2.4** In der `static/style.css` Datei siehtst du bei jedem Block-Anfang gelbe Wörter. Kannst du
+**Aufgabe 2.4** In der `static/style.css` Datei siehst du bei jedem Block-Anfang gelbe Wörter. Kannst du
 dir vorstellen was diese Wörter bedeuten? Was ist der Unterschied zwischen denen die einen Punkt am Anfang haben und
 denen ohne Punkt? Kannst du weitere Unterschiede feststellen? Falls du nicht weiter kommst -> (http://www.css-lernen.net/klassen.html)
 
@@ -166,7 +166,7 @@ Welche Probleme können dadurch gelöst werden?
 
 CSS und HTML sind keine wirklichen Programmiersprachen, sondern
 Beschreibungssprachen. Mit Jinja2 hingegen kann man die Ausgabe von Webseiten
-ausprogrammieren. Zusätzliche Interaktion im Browser kann mit einer weiteren
+aus programmieren Zusätzliche Interaktion im Browser kann mit einer weiteren
 Sprache gesteuert werden: JavaScript.
 
 In der Notenverwaltung kommt JavaScript nur an zwei Stellen vor: Beim Löschen
@@ -236,8 +236,8 @@ Programmierung gehen. Diese besteht u.a. aus den folgenden Elementen:
 
 Das folgende Programm kombiniert all diese Elemente:
 
-    eingabe = input("Wie viele Wiederholungen sind gewünscht? ")
-    wiederholungen = int(eingabe)
+    Eingabe = input("Wie viele Wiederholungen sind gewünscht? ")
+    Wiederholungen = in(eingabe)
     if wiederholungen < 0:
         print("Sie wünschen keine Wiederholungen")
     else:
@@ -271,7 +271,7 @@ Kapitel lesen und dir wichtige Sachen für die nächsten Aufgaben notieren -> (h
 **Aufgabe 6.3**: In der Datei `calculations.py` gibt es eine Funktion namens
 `calculate_deficiency_points`, welche die Mangelpunkte eines Schülers berechnet.
 Diese gibt immer den Wert `0.0` zurück. Die Funktion wurde noch nicht
-ausprogrammiert. Lies die Anweisungen in der Funktion durch, und versuche, sie
+aus programmiert Lies die Anweisungen in der Funktion durch, und versuche, sie
 korrekt auszuprogrammieren. (Die Zeilen, die mit `#` beginnen, sind Kommentare,
 und werden nicht ausgeführt.) Um die Funktion zu testen kannst du im
 [Notenüberblick](http://localhost:5000/overview) einen Schüler mit ungenügenden

@@ -55,7 +55,7 @@ class DataBase:
                 subject = row[1]
                 if subject not in subject_grades:
                     subject_grades[subject] = []
-                subject_grades[subject].append(row[0])
+                subject_grades[subject].append(row[0])  
         return subject_grades
 
     def load_subjects(self):
