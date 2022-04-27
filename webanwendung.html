@@ -206,18 +206,18 @@ Nützliche Helferlein für verschiedene Aufgaben</a></li>
 Gegenüber herkömmlichen Programmen, die zunächst auf einem Computer
 installiert werden müssen, haben Web-Anwendungen viele Vorteile. Man
 kann von jedem Computer auf sie zugreifen, sofern ein Browser
-installiert ist und eine Internetverbindung zur Verfügung steht. Auch
-funktioniert Sie auf allen Betriebssystemen ohne Anpassungen.</p>
+installiert ist und eine Internetverbindung besteht. Auch funktioniert
+Sie unabhängig vom Betriebssystemen des Benutzers.</p>
 <p>In diesem Dokument findest Du Übungen zu einer beispielhaften
 Web-Anwendung. Es handelt sich dabei um eine kleine Notenverwaltung, die
 mit der Programmiersprache Python und dem Framework Flask entwickelt
 worden ist.</p>
 <h1 id="einrichten-der-umgebung">Einrichten der Umgebung</h1>
 <p>Wir stellen Dir eine Umgebung bereit, womit Du einerseits die
-Web-Anwendung ausführen, und sie andererseits weiterentwickeln kannst.
+Web-Anwendung ausführen und sie andererseits weiterentwickeln kannst.
 Sollte etwas nicht funktionieren, frage einfach bei uns nach.</p>
 <p>Mache Dich mit der <a
-href="http://localhost:5000/">Notenverwaltung</a> etwas bekannt. Du
+href="http://localhost:5000/">Notenverwaltung</a> etwas vertraut. Du
 kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts
 kaputt gehen. (Bei Datenverlust können wir die Datenbank
 wiederherstellen.)</p>
@@ -237,8 +237,8 @@ Schluss auf!</p>
 zu lösen, sondern einen möglichst breit gefächerten Eindruck über die
 verschiedenen Technologien zu erhalten. Wenn Du bei einer Aufgabe lange
 nicht weiter kommst, frage uns einfach um Hilfe. (Alle beschriebenen
-Technologien zu beherrschen ist nicht das Ziel des heutigen Nachmittags,
-sondern dasjenige einer vierjährigen Lehre.)</p>
+Technologien zu beherrschen ist nicht das Ziel des heutigen Tages,
+sondern das einer vierjährigen Lehre.)</p>
 <h2 id="zurechtfinden-im-verzeichnis">Zurechtfinden im Verzeichnis</h2>
 <p>Das Arbeitsverzeichnis <code>schnuppern-webanwendung</code> enthält
 verschiedene Verzeichnisse und Dateien. (Hinweis: die Verzeichnisse
@@ -247,19 +247,19 @@ ignorieren, aber nicht löschen!)</p>
 <p><strong>Aufgabe 1.1</strong>: Stelle eine Liste mit allen
 Dateiendungen zusammen, die Du im Arbeitsverzeichnis finden kannst.</p>
 <p><strong>Aufgabe 1.2</strong>: Versuche die verschiedenen Dateien zu
-öffnen. Schaue Dir den Inhalt der Dateien an, und versuche zu verstehen,
+öffnen. Schaue Dir den Inhalt der Dateien an und versuche zu verstehen,
 was dieser Inhalt wohl bedeuten könnte. Suche Dir pro Dateiendung eine
-Datei aus, und versuche deren Inhalt stichwortartig zu beschreiben.</p>
+Datei aus und versuche deren Inhalt stichwortartig zu beschreiben.</p>
 <h2 id="cascading-style-sheets-css-definition-der-darstellung">Cascading
 Style Sheets (CSS): Definition der Darstellung</h2>
-<p>Das Aussehen einer Webseite oder Web-Anwendung wird heutzutage über
+<p>Das Aussehen einer Webseite oder Web-Anwendung wird über
 <em>Cascading Style Sheets</em> (kurz: CSS) gesteuert. In der Datei
 <code>static/style.css</code> findest Du die Definition für die
 Darstellung der Notenverwaltung.</p>
 <p>Eine Stildefinition besteht jeweils aus zwei Teilen: Einem Selektor,
 der bestimmt, für welche Elemente bestimmte Regeln gelten; und den
 eigentlichen Regeln (in geschweiften Klammern).</p>
-<p><strong>Aufgabe 2.1</strong>: Schaue dir den <a
+<p><strong>Aufgabe 2.1</strong>: Schaue Dir den <a
 href="http://localhost:5000/overview">Notenüberblick</a> an. Erfasse nun
 ein paar zusätzliche Fächer. Was fällt Dir auf, wenn Du den
 Notenüberblick erneut öffnest? Kannst Du die Darstellung der Seite
@@ -275,10 +275,10 @@ Du ändern?</p>
 <p><strong>Aufgabe 2.3</strong>: Die Notenverwaltung ist mit einer
 Standardschriftart gestaltet worden. Findest Du den Code-Block für die
 Auswahl der Schrift? Versuche eine andere Schriftart zu verwenden.
-Welche Angaben musst Du hierzu ändern? Kannst du auch die Schriftgrösse
+Welche Angaben musst Du hierzu ändern? Kannst Du auch die Schriftgrösse
 und den Schriftstil ändern? Die Seite <a
 href="http://www.w3big.com/de/css/css-font.html">CSS Fonts</a> könnte
-dir dabei behilflich sein. Notiere Deine Feststellungen.</p>
+Dir dabei behilflich sein. Notiere Deine Feststellungen.</p>
 <p><strong>Aufgabe 2.4</strong> In der Datei
 <code>static/style.css</code> siehst Du bei jedem Block-Anfang gelbe
 Wörter. Kannst Du Dir vorstellen, was diese Wörter bedeuten? Was ist der
@@ -360,7 +360,7 @@ Probleme können dadurch gelöst werden?</p>
 (JS): Interaktives Verhalten im Browser</h2>
 <p>CSS und HTML sind keine wirklichen Programmiersprachen, sondern
 Beschreibungssprachen. Mit Jinja2 hingegen kann man die Ausgabe von
-Webseiten aus programmieren Zusätzliche Interaktion im Browser kann mit
+Webseiten ausprogrammieren Zusätzliche Interaktion im Browser kann mit
 einer weiteren Sprache gesteuert werden: JavaScript.</p>
 <p>In der Notenverwaltung kommt JavaScript nur an zwei Stellen vor: Beim
 Löschen eines Faches oder eines Schülers wird der Benutzer zunächst
@@ -389,7 +389,7 @@ Query Language (SQL): Zugriff auf Datenbanken</h2>
 abgespeichert. Eine relationale Datenbank besteht aus Tabellen (sog.
 <em>Relationen</em>), in denen man verschiedene Daten der gleichen
 Struktur ablegen kann. Oftmals stehen die einzelnen Tabellen in
-Beziehung (englisch: “in relation”) zueinander.</p>
+Beziehung (englisch: <em>“in relation”</em>) zueinander.</p>
 <p>Relationale Datenbanken werden mit einer Sprache namens SQL definiert
 und abgefragt. Es gibt verschiedene Befehle um die Datenstruktur zu
 definieren (DDL: <em>Data Definition Language</em>), Daten abzufragen
@@ -428,8 +428,7 @@ Elementen:</p>
 <code>a</code> den Wert <code>3</code> zuweist</li>
 <li>Sequenzen: eine Reihe von Anweisungen, die hintereinander ausgeführt
 werden</li>
-<li>Entscheidungen: Anweisungen, die nur unter bestimmten Bedingungen
-ausgeführt werden</li>
+<li>Entscheidungen: Anweisungen, die nur bedingt ausgeführt werden</li>
 <li>Wiederholungen: Anweisungen, die mehrmals hintereinander ausgeführt
 werden</li>
 </ul>
@@ -441,16 +440,17 @@ if wiederholungen &lt;= 0:
 else:
     while wiederholungen &gt; 0:
         print(&quot;Es gibt noch&quot;, wiederholungen, &quot;Wiederholungen&quot;)
-        wiederholungen = wiederholungen - 1
-print(&quot;Jetzt ist Schluss!&quot;)</code></pre>
+        wiederholungen = wiederholungen - 1</code></pre>
 <ul>
 <li>Das Programm verwendet die Variablen <code>eingabe</code> und
 <code>wiederholungen</code>.</li>
-<li>Es gibt verschiedene Anweisungen zur Eingabe (<code>input</code>),
-zur Ausgabe (<code>print</code>) und Zuweisungen (<code>=</code>).</li>
+<li>Es gibt verschiedene Anweisungen zur Eingabe und Ausgabe
+(<code>input</code>/<code>print</code>) und Zuweisungen
+(<code>=</code>).</li>
 <li>Die ersten beiden Anweisungen werden als Sequenz abgearbeitet.</li>
-<li>Die Prüfung, ob <code>wiederholungen</code> kleiner als 0 ist, ist
-eine Entscheidung: Je nach Ergebnis wird anderer Code ausgeführt.</li>
+<li>Die Prüfung, ob <code>wiederholungen</code> kleiner oder gleich 0
+ist, ist eine Entscheidung: Je nach Ergebnis wird anderer Code
+ausgeführt.</li>
 <li>Mithilfe einer <code>while</code>-Schleife wird eine Wiederholung
 durchgeführt. Die Ausgabe der verbleibenden Wiederholungen und das
 Verkleinern des Wertes um eins wird bei jedem Durchlauf
@@ -458,18 +458,30 @@ durchgeführt.</li>
 </ul>
 <p>Bei Python ist es wichtig, dass der Code, der zu einer Entscheidung
 oder Wiederholung gehört, immer gleich eingerückt wird.</p>
-<p><strong>Aufgabe 6.1</strong>: Das Projekt enthält vier Python-Dateien
+<p><strong>Aufgabe 6.1</strong>: Was gibt das obenstehende Programm aus,
+wenn der Benutzer die Zahl <strong>3</strong> eingibt? Und wie sieht die
+Ausgabe aus, wenn der Benutzer den Buchstaben <strong>X</strong>
+eingibt? Notiere die mögliche Ausgabe in Deiner Textdatei!</p>
+<p><strong>Aufgabe 6.2</strong>: Erstelle eine neue Datei namens
+<code>wiederholungen.py</code> im Verzeichnis
+<code>schnuppern-webanwendung/</code>. Tippe das Programm von oben ab
+und speichere die Datei. Nun kannst Du das Programm im Terminal
+ausführen, indem Du <code>python3 wiederholungen.py</code> eingibst und
+mit <code>[Return]</code> oder <code>[Enter]</code> bestätigst. Prüfe
+nun, ob das Programm wirklich das ausgibt, was Du Dir für Aufgabe 6.1
+notiert hast!</p>
+<p><strong>Aufgabe 6.3</strong>: Das Projekt enthält vier Python-Dateien
 (Dateiendung <code>.py</code>). Öffne diese, überfliege den Code, und
 überlege Dir, was wohl in den verschiedenen Dateien passiert. Notiere
 deine Ideen stichwortartig.</p>
-<p><strong>Aufgabe 6.2</strong>: Villeicht hast Du beim überfliegen des
+<p><strong>Aufgabe 6.4</strong>: Villeicht hast Du beim überfliegen des
 Codes in den verschiedenen Dateien gemerkt, dass einige Code-Blöcke mit
 <code>def</code> beginnen. Kannst Du Dir vorstellen, was das bedeutet?
 Versuche zuerst selber zu überlegen, was das sein könnte. Notiere Deine
 Vermutungen. Danach kannst Du folgendes Kapitel über <a
 href="https://www.python-lernen.de/funktionen-in-python.htm">Python-Funktionen</a>
 lesen und Dir wichtige Sachen für die nächsten Aufgaben notieren.</p>
-<p><strong>Aufgabe 6.3</strong>: In der Datei
+<p><strong>Aufgabe 6.5</strong>: In der Datei
 <code>calculations.py</code> gibt es eine Funktion namens
 <code>calculate_deficiency_points</code>, welche die Mangelpunkte eines
 Schülers berechnet. Diese gibt immer den Wert <code>0.0</code> zurück.
@@ -480,13 +492,13 @@ nicht ausgeführt.) Um die Funktion zu testen kannst Du im <a
 href="http://localhost:5000/overview">Notenüberblick</a> einen Schüler
 mit ungenügenden Noten öffnen. Die Mangelpunkte sollten dann oberhalb
 des Titels <em>Note hinzufügen</em> angezeigt werden.</p>
-<p><strong>Aufgabe 6.4</strong>: Öffne die Datei <code>app.py</code>.
+<p><strong>Aufgabe 6.6</strong>: Öffne die Datei <code>app.py</code>.
 Diese enthält verschiedene Funktionen, die jeweils mit der Zeile
 <code>@app.route</code> beginnen. Öffne die verschiedenen Seiten der <a
 href="http://localhost:5000/">Notenverwaltung</a> im Browser. Schaue Dir
 die Adresszeile genau an. Kannst Du anhand der Adresse die verschiedenen
 Seiten den verschiedenen Funktionen in <code>app.py</code> zuordnen?</p>
-<p><strong>Aufgabe 6.5</strong>: Du hast sicher bemerkt, dass sich in
+<p><strong>Aufgabe 6.7</strong>: Du hast sicher bemerkt, dass sich in
 den verschiedenen Python-Dateien oben die sogenannten Imports von
 <em>Packages</em> (auf Deutsch <em>Module</em>) befinden. Erkläre kurz,
 was Imports sind, welche Arten es gibt und welche Regeln man befolgen

@@ -10,8 +10,7 @@ Viele Softwarelösungen werden heutzutage als Web-Anwendung umgesetzt. Gegenübe
 herkömmlichen Programmen, die zunächst auf einem Computer installiert werden
 müssen, haben Web-Anwendungen viele Vorteile. Man kann von jedem Computer auf
 sie zugreifen, sofern ein Browser installiert ist und eine Internetverbindung
-zur Verfügung steht. Auch funktioniert Sie auf allen Betriebssystemen ohne
-Anpassungen.
+besteht. Auch funktioniert Sie unabhängig vom Betriebssystemen des Benutzers.
 
 In diesem Dokument findest Du Übungen zu einer beispielhaften Web-Anwendung. Es
 handelt sich dabei um eine kleine Notenverwaltung, die mit der
@@ -20,10 +19,10 @@ Programmiersprache Python und dem Framework Flask entwickelt worden ist.
 # Einrichten der Umgebung
 
 Wir stellen Dir eine Umgebung bereit, womit Du einerseits die Web-Anwendung
-ausführen, und sie andererseits weiterentwickeln kannst. Sollte etwas nicht
+ausführen und sie andererseits weiterentwickeln kannst. Sollte etwas nicht
 funktionieren, frage einfach bei uns nach.
 
-Mache Dich mit der [Notenverwaltung](http://localhost:5000/) etwas bekannt. Du
+Mache Dich mit der [Notenverwaltung](http://localhost:5000/) etwas vertraut. Du
 kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts kaputt
 gehen. (Bei Datenverlust können wir die Datenbank wiederherstellen.)
 
@@ -45,8 +44,7 @@ Es geht nicht darum, alle Aufgaben möglichst korrekt und vollständig zu lösen
 sondern einen möglichst breit gefächerten Eindruck über die verschiedenen
 Technologien zu erhalten. Wenn Du bei einer Aufgabe lange nicht weiter kommst,
 frage uns einfach um Hilfe. (Alle beschriebenen Technologien zu beherrschen ist
-nicht das Ziel des heutigen Nachmittags, sondern dasjenige einer vierjährigen
-Lehre.)
+nicht das Ziel des heutigen Tages, sondern das einer vierjährigen Lehre.)
 
 ## Zurechtfinden im Verzeichnis
 
@@ -58,21 +56,21 @@ kannst Du für alle Übungen ignorieren, aber nicht löschen!)
 Arbeitsverzeichnis finden kannst.
 
 **Aufgabe 1.2**: Versuche die verschiedenen Dateien zu öffnen. Schaue Dir den
-Inhalt der Dateien an, und versuche zu verstehen, was dieser Inhalt wohl
-bedeuten könnte. Suche Dir pro Dateiendung eine Datei aus, und versuche deren
-Inhalt stichwortartig zu beschreiben.
+Inhalt der Dateien an und versuche zu verstehen, was dieser Inhalt wohl bedeuten
+könnte. Suche Dir pro Dateiendung eine Datei aus und versuche deren Inhalt
+stichwortartig zu beschreiben.
 
 ## Cascading Style Sheets (CSS): Definition der Darstellung
 
-Das Aussehen einer Webseite oder Web-Anwendung wird heutzutage über _Cascading
-Style Sheets_ (kurz: CSS) gesteuert. In der Datei `static/style.css` findest Du
-die Definition für die Darstellung der Notenverwaltung.
+Das Aussehen einer Webseite oder Web-Anwendung wird über _Cascading Style
+Sheets_ (kurz: CSS) gesteuert. In der Datei `static/style.css` findest Du die
+Definition für die Darstellung der Notenverwaltung.
 
 Eine Stildefinition besteht jeweils aus zwei Teilen: Einem Selektor, der
 bestimmt, für welche Elemente bestimmte Regeln gelten; und den eigentlichen
 Regeln (in geschweiften Klammern).
 
-**Aufgabe 2.1**: Schaue dir den [Notenüberblick](http://localhost:5000/overview)
+**Aufgabe 2.1**: Schaue Dir den [Notenüberblick](http://localhost:5000/overview)
 an. Erfasse nun ein paar zusätzliche Fächer. Was fällt Dir auf, wenn Du den
 Notenüberblick erneut öffnest? Kannst Du die Darstellung der Seite verbessern,
 indem Du Änderungen an `style.css` durchführst? (Forciere das Neuladen der
@@ -87,8 +85,8 @@ Welche Angaben musst Du ändern?
 **Aufgabe 2.3**: Die Notenverwaltung ist mit einer Standardschriftart gestaltet
 worden. Findest Du den Code-Block für die Auswahl der Schrift? Versuche eine
 andere Schriftart zu verwenden.  Welche Angaben musst Du hierzu ändern? Kannst
-du auch die Schriftgrösse und den Schriftstil ändern? Die Seite [CSS
-Fonts](http://www.w3big.com/de/css/css-font.html) könnte dir dabei behilflich
+Du auch die Schriftgrösse und den Schriftstil ändern? Die Seite [CSS
+Fonts](http://www.w3big.com/de/css/css-font.html) könnte Dir dabei behilflich
 sein. Notiere Deine Feststellungen.
 
 **Aufgabe 2.4** In der Datei `static/style.css` siehst Du bei jedem Block-Anfang
@@ -175,7 +173,7 @@ Welche Probleme können dadurch gelöst werden?
 
 CSS und HTML sind keine wirklichen Programmiersprachen, sondern
 Beschreibungssprachen. Mit Jinja2 hingegen kann man die Ausgabe von Webseiten
-aus programmieren Zusätzliche Interaktion im Browser kann mit einer weiteren
+ausprogrammieren Zusätzliche Interaktion im Browser kann mit einer weiteren
 Sprache gesteuert werden: JavaScript.
 
 In der Notenverwaltung kommt JavaScript nur an zwei Stellen vor: Beim Löschen
@@ -203,7 +201,7 @@ bedeuten?
 Die Noten werden in einer sogenannten _relationalen Datenbank_ abgespeichert.
 Eine relationale Datenbank besteht aus Tabellen (sog. _Relationen_), in denen
 man verschiedene Daten der gleichen Struktur ablegen kann. Oftmals stehen die
-einzelnen Tabellen in Beziehung (englisch: "in relation") zueinander.
+einzelnen Tabellen in Beziehung (englisch: _"in relation"_) zueinander.
 
 Relationale Datenbanken werden mit einer Sprache namens SQL definiert und
 abgefragt. Es gibt verschiedene Befehle um die Datenstruktur zu definieren (DDL:
@@ -239,8 +237,7 @@ Programmierung gehen. Diese besteht u.a. aus den folgenden Elementen:
 - Variablen: z.B. `a`, `length`, `result` oder `grade` mit verschiedenen Typen
 - Anweisungen: z.B. `a = 3`, welche der Variablen `a` den Wert `3` zuweist
 - Sequenzen: eine Reihe von Anweisungen, die hintereinander ausgeführt werden
-- Entscheidungen: Anweisungen, die nur unter bestimmten Bedingungen ausgeführt
-  werden
+- Entscheidungen: Anweisungen, die nur bedingt ausgeführt werden
 - Wiederholungen: Anweisungen, die mehrmals hintereinander ausgeführt werden
 
 Das folgende Programm kombiniert all diese Elemente:
@@ -253,14 +250,13 @@ Das folgende Programm kombiniert all diese Elemente:
         while wiederholungen > 0:
             print("Es gibt noch", wiederholungen, "Wiederholungen")
             wiederholungen = wiederholungen - 1
-    print("Jetzt ist Schluss!")
 
 - Das Programm verwendet die Variablen `eingabe` und `wiederholungen`.
-- Es gibt verschiedene Anweisungen zur Eingabe (`input`), zur Ausgabe (`print`)
-  und Zuweisungen (`=`).
+- Es gibt verschiedene Anweisungen zur Eingabe und Ausgabe (`input`/`print`) und
+  Zuweisungen (`=`).
 - Die ersten beiden Anweisungen werden als Sequenz abgearbeitet.
-- Die Prüfung, ob `wiederholungen` kleiner als 0 ist, ist eine Entscheidung: Je
-  nach Ergebnis wird anderer Code ausgeführt.
+- Die Prüfung, ob `wiederholungen` kleiner oder gleich 0 ist, ist eine
+  Entscheidung: Je nach Ergebnis wird anderer Code ausgeführt.
 - Mithilfe einer `while`-Schleife wird eine Wiederholung durchgeführt. Die
   Ausgabe der verbleibenden Wiederholungen und das Verkleinern des Wertes um
   eins wird bei jedem Durchlauf durchgeführt.
@@ -268,11 +264,22 @@ Das folgende Programm kombiniert all diese Elemente:
 Bei Python ist es wichtig, dass der Code, der zu einer Entscheidung oder
 Wiederholung gehört, immer gleich eingerückt wird.
 
-**Aufgabe 6.1**: Das Projekt enthält vier Python-Dateien (Dateiendung `.py`).
+**Aufgabe 6.1**: Was gibt das obenstehende Programm aus, wenn der Benutzer die
+Zahl **3** eingibt? Und wie sieht die Ausgabe aus, wenn der Benutzer den
+Buchstaben **X** eingibt? Notiere die mögliche Ausgabe in Deiner Textdatei!
+
+**Aufgabe 6.2**: Erstelle eine neue Datei namens `wiederholungen.py` im
+Verzeichnis `schnuppern-webanwendung/`. Tippe das Programm von oben ab und
+speichere die Datei. Nun kannst Du das Programm im Terminal ausführen, indem Du
+`python3 wiederholungen.py` eingibst und mit `[Return]` oder `[Enter]`
+bestätigst. Prüfe nun, ob das Programm wirklich das ausgibt, was Du Dir für
+Aufgabe 6.1 notiert hast!
+
+**Aufgabe 6.3**: Das Projekt enthält vier Python-Dateien (Dateiendung `.py`).
 Öffne diese, überfliege den Code, und überlege Dir, was wohl in den
 verschiedenen Dateien passiert. Notiere deine Ideen stichwortartig.
 
-**Aufgabe 6.2**: Villeicht hast Du beim überfliegen des Codes in den
+**Aufgabe 6.4**: Villeicht hast Du beim überfliegen des Codes in den
 verschiedenen Dateien gemerkt, dass einige Code-Blöcke mit `def` beginnen.
 Kannst Du Dir vorstellen, was das bedeutet?  Versuche zuerst selber zu
 überlegen, was das sein könnte. Notiere Deine Vermutungen. Danach kannst Du
@@ -280,7 +287,7 @@ folgendes Kapitel über
 [Python-Funktionen](https://www.python-lernen.de/funktionen-in-python.htm) lesen
 und Dir wichtige Sachen für die nächsten Aufgaben notieren.
 
-**Aufgabe 6.3**: In der Datei `calculations.py` gibt es eine Funktion namens
+**Aufgabe 6.5**: In der Datei `calculations.py` gibt es eine Funktion namens
 `calculate_deficiency_points`, welche die Mangelpunkte eines Schülers berechnet.
 Diese gibt immer den Wert `0.0` zurück. Die Funktion wurde noch nicht
 ausprogrammiert Lies die Anweisungen in der Funktion durch, und versuche, sie
@@ -290,13 +297,13 @@ und werden nicht ausgeführt.) Um die Funktion zu testen kannst Du im
 Noten öffnen. Die Mangelpunkte sollten dann oberhalb des Titels _Note
 hinzufügen_ angezeigt werden.
 
-**Aufgabe 6.4**: Öffne die Datei `app.py`. Diese enthält verschiedene
+**Aufgabe 6.6**: Öffne die Datei `app.py`. Diese enthält verschiedene
 Funktionen, die jeweils mit der Zeile `@app.route` beginnen. Öffne die
 verschiedenen Seiten der [Notenverwaltung](http://localhost:5000/) im Browser.
 Schaue Dir die Adresszeile genau an. Kannst Du anhand der Adresse die
 verschiedenen Seiten den verschiedenen Funktionen in `app.py` zuordnen?
 
-**Aufgabe 6.5**: Du hast sicher bemerkt, dass sich in den verschiedenen
+**Aufgabe 6.7**: Du hast sicher bemerkt, dass sich in den verschiedenen
 Python-Dateien oben die sogenannten Imports von _Packages_ (auf Deutsch
 _Module_) befinden. Erkläre kurz, was Imports sind, welche Arten es gibt und
 welche Regeln man befolgen muss. Hilfe findest Du auf der Seite über [Module in
