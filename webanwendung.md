@@ -1,8 +1,8 @@
 ---
 title: 'Übung Web-Anwendung'
 subtitle: 'Eine Notenverwaltung mit Python und Flask'
-author: 'Patrick Bucher, seantis GmbH'
-date: 20.10.2020
+author: 'Patrick Bucher und Ayla Seckanovic, seantis GmbH'
+date: 28.04.2022
 lang: de
 ---
 
@@ -19,13 +19,13 @@ Programmiersprache Python und dem Framework Flask entwickelt worden ist.
 
 # Einrichten der Umgebung
 
-Der Instruktor stellt Dir eine Umgebung bereit, womit Du einerseits die
-Web-Anwendung ausführen, und sie andererseits weiterentwickeln kannst. Sollte
-etwas nicht funktionieren, frage einfach beim Instruktor nach.
+Wir stellen Dir eine Umgebung bereit, womit Du einerseits die Web-Anwendung
+ausführen, und sie andererseits weiterentwickeln kannst. Sollte etwas nicht
+funktionieren, frage einfach bei uns nach.
 
 Mache Dich mit der [Notenverwaltung](http://localhost:5000/) etwas bekannt. Du
 kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts kaputt
-gehen. (Bei Datenverlust kann der Instruktor die Datenbank wiederherstellen.)
+gehen. (Bei Datenverlust können wir die Datenbank wiederherstellen.)
 
 # Aufgaben
 
@@ -34,22 +34,25 @@ Web-Anwendung beschäftigen. Dabei lernst Du verschiedenste Technologien kennen,
 die man als Web-Entwickler heutzutage kennen sollte. (Für manche Technologien
 gibt es auch Alternativen.)
 
-Halte Deine Lösungen in einer separaten Textdatei fest. (Speichere diese häufig
-ab, um keine Informationen zu verlieren.) Obwohl man eine Textdatei nicht wie
-ein Word-Dokument formatieren kann, sollst Du diese möglichst gut strukturieren
-und lesbar formatieren. Bewahre diese Datei bis zum Schluss auf!
+Bei manchen Aufgaben musst Du etwas am Programmcode anpassen, bei anderen bloss
+eine Frage beantworten. Halte diese Antworten in einer separaten Textdatei fest.
+(Speichere diese häufig ab, um keine Informationen zu verlieren.) Obwohl man
+eine Textdatei nicht wie ein Word-Dokument formatieren kann, sollst Du diese
+möglichst gut strukturieren und lesbar formatieren.  Bewahre diese Datei bis zum
+Schluss auf!
 
 Es geht nicht darum, alle Aufgaben möglichst korrekt und vollständig zu lösen,
 sondern einen möglichst breit gefächerten Eindruck über die verschiedenen
-Technologien zu erhalten. Wenn Du bei einer Aufgabe lange anstehst, frage den
-Instruktor um Hilfe. (Alle beschriebenen Technologien zu beherrschen ist nicht
-das Ziel des heutigen Nachmittags, sondern dasjenige einer vierjährigen Lehre.)
+Technologien zu erhalten. Wenn Du bei einer Aufgabe lange nicht weiter kommst,
+frage uns einfach um Hilfe. (Alle beschriebenen Technologien zu beherrschen ist
+nicht das Ziel des heutigen Nachmittags, sondern dasjenige einer vierjährigen
+Lehre.)
 
 ## Zurechtfinden im Verzeichnis
 
 Das Arbeitsverzeichnis `schnuppern-webanwendung` enthält verschiedene
-Unterverzeichnisse und Dateien. (Hinweis: die Verzeichnisse `env` und
-`__pycache__` kannst Du für alle Übungen ignorieren, aber nicht löschen!)
+Verzeichnisse und Dateien. (Hinweis: die Verzeichnisse `env` und `__pycache__`
+kannst Du für alle Übungen ignorieren, aber nicht löschen!)
 
 **Aufgabe 1.1**: Stelle eine Liste mit allen Dateiendungen zusammen, die Du im
 Arbeitsverzeichnis finden kannst.
@@ -72,7 +75,7 @@ Regeln (in geschweiften Klammern).
 **Aufgabe 2.1**: Schaue dir den [Notenüberblick](http://localhost:5000/overview)
 an. Erfasse nun ein paar zusätzliche Fächer. Was fällt Dir auf, wenn Du den
 Notenüberblick erneut öffnest? Kannst Du die Darstellung der Seite verbessern,
-indem du Änderungen an `style.css` durchführst? (Forciere das Neuladen der
+indem Du Änderungen an `style.css` durchführst? (Forciere das Neuladen der
 Änderungen mit `[Ctrl]+[Shift]+[R]`.)
 
 **Aufgabe 2.2**: Die Anwendung verwendet ein Farbschema, das auf blauen
@@ -81,19 +84,25 @@ Tool](https://material.io/resources/color/), um ein neues Farbschema zu
 kreieren. Du musst die alten Farben in `style.css` durch die neuen ersetzen.
 Welche Angaben musst Du ändern?
 
-**Aufgabe 2.3**: Die Notenverwaltung ist mit einer standart Schrift gestaltet worden.
-Findest du den Code-Block für die Gestaltung der Schrift? Versuche eine andere Schriftart anzuwenden.
-Welche Angaben musst du ändern? Kannst du auch die Schriftgrösse und den Schriftstil ändern?. Diese Seite
-könnte dir dabei behilflich sein (http://www.w3big.com/de/css/css-font.html). Notiere deine Feststellungen.
+**Aufgabe 2.3**: Die Notenverwaltung ist mit einer Standardschriftart gestaltet
+worden. Findest Du den Code-Block für die Auswahl der Schrift? Versuche eine
+andere Schriftart zu verwenden.  Welche Angaben musst Du hierzu ändern? Kannst
+du auch die Schriftgrösse und den Schriftstil ändern? Die Seite [CSS
+Fonts](http://www.w3big.com/de/css/css-font.html) könnte dir dabei behilflich
+sein. Notiere Deine Feststellungen.
 
-**Aufgabe 2.4** In der `static/style.css` Datei siehst du bei jedem Block-Anfang gelbe Wörter. Kannst du
-dir vorstellen was diese Wörter bedeuten? Was ist der Unterschied zwischen denen die einen Punkt am Anfang haben und
-denen ohne Punkt? Kannst du weitere Unterschiede feststellen? Falls du nicht weiter kommst -> (http://www.css-lernen.net/klassen.html)
+**Aufgabe 2.4** In der Datei `static/style.css` siehst Du bei jedem Block-Anfang
+gelbe Wörter. Kannst Du Dir vorstellen, was diese Wörter bedeuten? Was ist der
+Unterschied zwischen denen, die einen Punkt am Anfang haben, und denen ohne
+Punkt? Kannst Du weitere Unterschiede feststellen? Falls Du nicht weiter kommst,
+kannst Du auf dieser Seite über
+[CSS-Klassen](http://www.css-lernen.net/klassen.html) Hilfe finden.
 
-**Aufgabe 2.5** Nun hast du CSS kennengelernt. Mache eine kurze Zusammenfassung über die Aufgaben oder über neu gelerntes. Beantworte
-dabei folgende Fragen:
-- Hast du bereits mal etwas mit CSS gemacht, wenn ja was?
-- Konntest du etwas neues lernen?
+**Aufgabe 2.5** Nun hast Du CSS kennengelernt. Mache eine kurze Zusammenfassung
+über die Aufgaben oder über neu Gelerntes. Beantworte dabei folgende Fragen:
+
+- Hast Du bereits einmal etwas mit CSS gemacht, wenn ja was?
+- Konntest Du etwas Neues lernen?
 - Waren die Links hilfreich?
 
 ## Hypertext Markup Language (HTML): Beschreibung der Seitenstruktur
@@ -184,7 +193,7 @@ bekannt vor? Wo gibt es ähnliche Bezeichnungen?
 **Aufgabe 4.3**: Lösche die Zeile `e.preventDefault();` und lade die
 Notenverwaltung neu mit `[Ctrl]+[Shift]+[R]`, damit der JavaScript-Code sicher
 nachgeladen wird. Versuche nun ein paar Schüler zu löschen. Die entsprechende
-Bestätigung kannst du einmal verneinen und einmal bestätigen. Was fällt Dir
+Bestätigung kannst Du einmal verneinen und einmal bestätigen. Was fällt Dir
 dabei auf? Was bedeutet "`preventDefault`" auf Deutsch übersetzt? Was für eine
 Bedeutung hat es? Was könnte das Ausrufezeichen (`!`) in der Zeile darüber
 bedeuten?
@@ -192,9 +201,9 @@ bedeuten?
 ## Structured Query Language (SQL): Zugriff auf Datenbanken
 
 Die Noten werden in einer sogenannten _relationalen Datenbank_ abgespeichert.
-Eine relationale Datenbank besteht aus Tabellen, in denen man verschiedene Daten
-der gleichen Struktur ablegen kann. Oftmals stehen die einzelnen Tabellen in
-Beziehung (englisch: "in relation") zueinander.
+Eine relationale Datenbank besteht aus Tabellen (sog. _Relationen_), in denen
+man verschiedene Daten der gleichen Struktur ablegen kann. Oftmals stehen die
+einzelnen Tabellen in Beziehung (englisch: "in relation") zueinander.
 
 Relationale Datenbanken werden mit einer Sprache namens SQL definiert und
 abgefragt. Es gibt verschiedene Befehle um die Datenstruktur zu definieren (DDL:
@@ -206,7 +215,7 @@ Daten zu kontrollieren (DCL: _Data Control Language_).
 Datenbanktabellen. Jede Tabelle hat einen Namen und mehrere Spalten. Eine
 Tabelle hat zusätzlich Beziehungen zu anderen Tabellen. Versuche diese Tabellen
 auf einem Blatt Papier aufzuzeichnen. Beispieldaten (zwei, drei pro Tabelle
-genügen) kannst du erfinden und als Zeilen eintragen.
+genügen) kannst Du erfinden und als Zeilen eintragen.
 
 **Aufgabe 5.2**: Die Dateien `data.py` und `insert_test_data.py` enthalten zwar
 in erster Linie Python-Code (siehe nächstes Kapitel), dieser enthält aber
@@ -236,9 +245,9 @@ Programmierung gehen. Diese besteht u.a. aus den folgenden Elementen:
 
 Das folgende Programm kombiniert all diese Elemente:
 
-    Eingabe = input("Wie viele Wiederholungen sind gewünscht? ")
-    Wiederholungen = in(eingabe)
-    if wiederholungen < 0:
+    eingabe = input("Wie viele Wiederholungen sind gewünscht? ")
+    wiederholungen = int(eingabe)
+    if wiederholungen <= 0:
         print("Sie wünschen keine Wiederholungen")
     else:
         while wiederholungen > 0:
@@ -263,17 +272,20 @@ Wiederholung gehört, immer gleich eingerückt wird.
 Öffne diese, überfliege den Code, und überlege Dir, was wohl in den
 verschiedenen Dateien passiert. Notiere deine Ideen stichwortartig.
 
-**Aufgabe 6.2**: Villeicht hast du beim überfliegen des Codes, in den verschiedenen Dateien
-gemerkt, das einige Code-Blöcke mit `def` beginnen. Kannst du dir vorstellen, was das bedeutet?
-Versuche zuerst selber zu überlegen, was das sein könnte. Notiere deine Vermutungen. Danach kannst du folgendes
-Kapitel lesen und dir wichtige Sachen für die nächsten Aufgaben notieren -> (https://www.python-lernen.de/funktionen-in-python.htm)
+**Aufgabe 6.2**: Villeicht hast Du beim überfliegen des Codes in den
+verschiedenen Dateien gemerkt, dass einige Code-Blöcke mit `def` beginnen.
+Kannst Du Dir vorstellen, was das bedeutet?  Versuche zuerst selber zu
+überlegen, was das sein könnte. Notiere Deine Vermutungen. Danach kannst Du
+folgendes Kapitel über
+[Python-Funktionen](https://www.python-lernen.de/funktionen-in-python.htm) lesen
+und Dir wichtige Sachen für die nächsten Aufgaben notieren.
 
 **Aufgabe 6.3**: In der Datei `calculations.py` gibt es eine Funktion namens
 `calculate_deficiency_points`, welche die Mangelpunkte eines Schülers berechnet.
 Diese gibt immer den Wert `0.0` zurück. Die Funktion wurde noch nicht
-aus programmiert Lies die Anweisungen in der Funktion durch, und versuche, sie
+ausprogrammiert Lies die Anweisungen in der Funktion durch, und versuche, sie
 korrekt auszuprogrammieren. (Die Zeilen, die mit `#` beginnen, sind Kommentare,
-und werden nicht ausgeführt.) Um die Funktion zu testen kannst du im
+und werden nicht ausgeführt.) Um die Funktion zu testen kannst Du im
 [Notenüberblick](http://localhost:5000/overview) einen Schüler mit ungenügenden
 Noten öffnen. Die Mangelpunkte sollten dann oberhalb des Titels _Note
 hinzufügen_ angezeigt werden.
@@ -284,9 +296,11 @@ verschiedenen Seiten der [Notenverwaltung](http://localhost:5000/) im Browser.
 Schaue Dir die Adresszeile genau an. Kannst Du anhand der Adresse die
 verschiedenen Seiten den verschiedenen Funktionen in `app.py` zuordnen?
 
-**Aufgabe 6.5**: Du hast sicher bemerkt, dass sich in den verschiedenen Python Dateien oben die sogenannten Imports (auf Deutsch Module)
-befinden. Erkläre kurz was Imports sind, welche Arten es gibt und welche Regelung man befolgt.
-
+**Aufgabe 6.5**: Du hast sicher bemerkt, dass sich in den verschiedenen
+Python-Dateien oben die sogenannten Imports von _Packages_ (auf Deutsch
+_Module_) befinden. Erkläre kurz, was Imports sind, welche Arten es gibt und
+welche Regeln man befolgen muss. Hilfe findest Du auf der Seite über [Module in
+Python](https://www.python-lernen.de/module-in-python.htm),
 
 ## Makefile: Erzeugen von Dateien anhand von Abhängigkeiten
 

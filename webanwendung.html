@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Patrick Bucher und Ayla Seckanovic, seantis GmbH" />
+  <title>Übung Web-Anwendung</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Übung Web-Anwendung</h1>
+<p class="subtitle">Eine Notenverwaltung mit Python und Flask</p>
+<p class="author">Patrick Bucher und Ayla Seckanovic, seantis GmbH</p>
+<p class="date">28.04.2022</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#einrichten-der-umgebung">Einrichten der Umgebung</a></li>
+<li><a href="#aufgaben">Aufgaben</a>
+<ul>
+<li><a href="#zurechtfinden-im-verzeichnis">Zurechtfinden im
+Verzeichnis</a></li>
+<li><a
+href="#cascading-style-sheets-css-definition-der-darstellung">Cascading
+Style Sheets (CSS): Definition der Darstellung</a></li>
+<li><a
+href="#hypertext-markup-language-html-beschreibung-der-seitenstruktur">Hypertext
+Markup Language (HTML): Beschreibung der Seitenstruktur</a>
+<ul>
+<li><a href="#jinja2-templates-vorlagen-für-dynamisches-html">Jinja2
+Templates: Vorlagen für dynamisches HTML</a></li>
+</ul></li>
+<li><a
+href="#javascript-js-interaktives-verhalten-im-browser">JavaScript (JS):
+Interaktives Verhalten im Browser</a></li>
+<li><a
+href="#structured-query-language-sql-zugriff-auf-datenbanken">Structured
+Query Language (SQL): Zugriff auf Datenbanken</a></li>
+<li><a href="#python-serverseitige-programmlogik">Python: Serverseitige
+Programmlogik</a></li>
+<li><a
+href="#makefile-erzeugen-von-dateien-anhand-von-abhängigkeiten">Makefile:
+Erzeugen von Dateien anhand von Abhängigkeiten</a></li>
+<li><a
+href="#shell-skripte-nützliche-helferlein-für-verschiedene-aufgaben">Shell-Skripte:
+Nützliche Helferlein für verschiedene Aufgaben</a></li>
+<li><a href="#ausblick">Ausblick</a></li>
+</ul></li>
+<li><a href="#fazit">Fazit</a></li>
+</ul>
+</nav>
+<p>Viele Softwarelösungen werden heutzutage als Web-Anwendung umgesetzt.
+Gegenüber herkömmlichen Programmen, die zunächst auf einem Computer
+installiert werden müssen, haben Web-Anwendungen viele Vorteile. Man
+kann von jedem Computer auf sie zugreifen, sofern ein Browser
+installiert ist und eine Internetverbindung zur Verfügung steht. Auch
+funktioniert Sie auf allen Betriebssystemen ohne Anpassungen.</p>
+<p>In diesem Dokument findest Du Übungen zu einer beispielhaften
+Web-Anwendung. Es handelt sich dabei um eine kleine Notenverwaltung, die
+mit der Programmiersprache Python und dem Framework Flask entwickelt
+worden ist.</p>
+<h1 id="einrichten-der-umgebung">Einrichten der Umgebung</h1>
+<p>Wir stellen Dir eine Umgebung bereit, womit Du einerseits die
+Web-Anwendung ausführen, und sie andererseits weiterentwickeln kannst.
+Sollte etwas nicht funktionieren, frage einfach bei uns nach.</p>
+<p>Mache Dich mit der <a
+href="http://localhost:5000/">Notenverwaltung</a> etwas bekannt. Du
+kannst Informationen einsehen, hinzufügen und löschen. Dabei kann nichts
+kaputt gehen. (Bei Datenverlust können wir die Datenbank
+wiederherstellen.)</p>
+<h1 id="aufgaben">Aufgaben</h1>
+<p>Mit den folgenden Aufgaben kannst Du Dich mit dem Aufbau einer
+modernen Web-Anwendung beschäftigen. Dabei lernst Du verschiedenste
+Technologien kennen, die man als Web-Entwickler heutzutage kennen
+sollte. (Für manche Technologien gibt es auch Alternativen.)</p>
+<p>Bei manchen Aufgaben musst Du etwas am Programmcode anpassen, bei
+anderen bloss eine Frage beantworten. Halte diese Antworten in einer
+separaten Textdatei fest. (Speichere diese häufig ab, um keine
+Informationen zu verlieren.) Obwohl man eine Textdatei nicht wie ein
+Word-Dokument formatieren kann, sollst Du diese möglichst gut
+strukturieren und lesbar formatieren. Bewahre diese Datei bis zum
+Schluss auf!</p>
+<p>Es geht nicht darum, alle Aufgaben möglichst korrekt und vollständig
+zu lösen, sondern einen möglichst breit gefächerten Eindruck über die
+verschiedenen Technologien zu erhalten. Wenn Du bei einer Aufgabe lange
+nicht weiter kommst, frage uns einfach um Hilfe. (Alle beschriebenen
+Technologien zu beherrschen ist nicht das Ziel des heutigen Nachmittags,
+sondern dasjenige einer vierjährigen Lehre.)</p>
+<h2 id="zurechtfinden-im-verzeichnis">Zurechtfinden im Verzeichnis</h2>
+<p>Das Arbeitsverzeichnis <code>schnuppern-webanwendung</code> enthält
+verschiedene Verzeichnisse und Dateien. (Hinweis: die Verzeichnisse
+<code>env</code> und <code>__pycache__</code> kannst Du für alle Übungen
+ignorieren, aber nicht löschen!)</p>
+<p><strong>Aufgabe 1.1</strong>: Stelle eine Liste mit allen
+Dateiendungen zusammen, die Du im Arbeitsverzeichnis finden kannst.</p>
+<p><strong>Aufgabe 1.2</strong>: Versuche die verschiedenen Dateien zu
+öffnen. Schaue Dir den Inhalt der Dateien an, und versuche zu verstehen,
+was dieser Inhalt wohl bedeuten könnte. Suche Dir pro Dateiendung eine
+Datei aus, und versuche deren Inhalt stichwortartig zu beschreiben.</p>
+<h2 id="cascading-style-sheets-css-definition-der-darstellung">Cascading
+Style Sheets (CSS): Definition der Darstellung</h2>
+<p>Das Aussehen einer Webseite oder Web-Anwendung wird heutzutage über
+<em>Cascading Style Sheets</em> (kurz: CSS) gesteuert. In der Datei
+<code>static/style.css</code> findest Du die Definition für die
+Darstellung der Notenverwaltung.</p>
+<p>Eine Stildefinition besteht jeweils aus zwei Teilen: Einem Selektor,
+der bestimmt, für welche Elemente bestimmte Regeln gelten; und den
+eigentlichen Regeln (in geschweiften Klammern).</p>
+<p><strong>Aufgabe 2.1</strong>: Schaue dir den <a
+href="http://localhost:5000/overview">Notenüberblick</a> an. Erfasse nun
+ein paar zusätzliche Fächer. Was fällt Dir auf, wenn Du den
+Notenüberblick erneut öffnest? Kannst Du die Darstellung der Seite
+verbessern, indem Du Änderungen an <code>style.css</code> durchführst?
+(Forciere das Neuladen der Änderungen mit
+<code>[Ctrl]+[Shift]+[R]</code>.)</p>
+<p><strong>Aufgabe 2.2</strong>: Die Anwendung verwendet ein Farbschema,
+das auf blauen Farbtönen basiert. Verwende das <a
+href="https://material.io/resources/color/">Material Design Color
+Tool</a>, um ein neues Farbschema zu kreieren. Du musst die alten Farben
+in <code>style.css</code> durch die neuen ersetzen. Welche Angaben musst
+Du ändern?</p>
+<p><strong>Aufgabe 2.3</strong>: Die Notenverwaltung ist mit einer
+Standardschriftart gestaltet worden. Findest Du den Code-Block für die
+Auswahl der Schrift? Versuche eine andere Schriftart zu verwenden.
+Welche Angaben musst Du hierzu ändern? Kannst du auch die Schriftgrösse
+und den Schriftstil ändern? Die Seite <a
+href="http://www.w3big.com/de/css/css-font.html">CSS Fonts</a> könnte
+dir dabei behilflich sein. Notiere Deine Feststellungen.</p>
+<p><strong>Aufgabe 2.4</strong> In der Datei
+<code>static/style.css</code> siehst Du bei jedem Block-Anfang gelbe
+Wörter. Kannst Du Dir vorstellen, was diese Wörter bedeuten? Was ist der
+Unterschied zwischen denen, die einen Punkt am Anfang haben, und denen
+ohne Punkt? Kannst Du weitere Unterschiede feststellen? Falls Du nicht
+weiter kommst, kannst Du auf dieser Seite über <a
+href="http://www.css-lernen.net/klassen.html">CSS-Klassen</a> Hilfe
+finden.</p>
+<p><strong>Aufgabe 2.5</strong> Nun hast Du CSS kennengelernt. Mache
+eine kurze Zusammenfassung über die Aufgaben oder über neu Gelerntes.
+Beantworte dabei folgende Fragen:</p>
+<ul>
+<li>Hast Du bereits einmal etwas mit CSS gemacht, wenn ja was?</li>
+<li>Konntest Du etwas Neues lernen?</li>
+<li>Waren die Links hilfreich?</li>
+</ul>
+<h2
+id="hypertext-markup-language-html-beschreibung-der-seitenstruktur">Hypertext
+Markup Language (HTML): Beschreibung der Seitenstruktur</h2>
+<p>Die Struktur einer Webseite wird in HTML angegeben. Da eine
+Web-Anwendung nicht bloss <em>statische</em> Seiten (mit immer
+gleichbleibendem Inhalt), sondern <em>dynamische</em> Seiten verwendet,
+ist die HTML-Struktur in sogenannten <em>Templates</em> (Vorlagen)
+definiert. Du findest also keine <code>.html</code>-Dateien im
+vorliegenden Projekt.</p>
+<p>HTML basiert auf sogenannten <em>Tags</em>. Dies sind Elemente, die
+in spitzen Klammern eingeschlossen sind. Die meisten Tags müssen
+geschlossen werden. Hier ein Beispiel für einen Titel (<em>Headline
+1</em>):</p>
+<pre><code>&lt;h1&gt;Meine Webseite&lt;/h1&gt;</code></pre>
+<p>Tags können verschachtelt werden. Dabei muss jeweils derjenige Tag
+zuerst geschlossen werden, der als letztes geöffnet worden ist. Hier ist
+ein Absatz, bei dem ein Wort speziell hervorgehoben wird:</p>
+<pre><code>&lt;p&gt;Hier ist ein &lt;strong&gt;wichtiges&lt;/strong&gt; Wort.&lt;/p&gt;</code></pre>
+<h3 id="jinja2-templates-vorlagen-für-dynamisches-html">Jinja2
+Templates: Vorlagen für dynamisches HTML</h3>
+<p>Im Verzeichnis <code>templates/</code> findest Du verschiedene
+Dateien mit der Endung <code>.jinja2</code>. Jede Datei beschreibt eine
+andere Seite bzw. einen anderen Seitenbereich der Web-Anwendung.</p>
+<p>Ein grosser Teil des Codes ist in HTML geschrieben. Im Gegensatz zu
+den HTML-Tags werden bei Jinja2-Templates geschweifte Klammern
+eingesetzt. Dabei gibt es zwei wichtige Arten von Elementen:</p>
+<p>Erstens: Kontrollstrukturen, die in <code>{% ... %}</code> eingefasst
+sind:</p>
+<pre><code>{% if grade &gt; 4.0 %}
+    &lt;p&gt;die Prüfung wurde bestanden&lt;/p&gt;
+{% endif %}</code></pre>
+<p>Zweitens: Werte, die in <code>{{ ... }}</code> eingefasst sind:</p>
+<pre><code>&lt;p&gt;Die Prüfung wurde mit der Note {{ grade }} bestanden.&lt;/p&gt;</code></pre>
+<p><strong>Aufgabe 3.1</strong>: Besuche die verschiedenen Seiten der <a
+href="http://localhost:5000/">Notenverwaltung</a>. Öffne anschliessend
+die verschiedenen Template-Dateien im Unterverzeichnis
+<code>templates/</code>. Kannst Du diese Templates den verschiedenen
+Seiten zuordnen? Gibt es zu jedem Template eine Seite?</p>
+<p><strong>Aufgabe 3.2</strong>: Die <a
+href="http://localhost:5000/pupils">Schüler</a> werden in einer Liste
+dargestellt. Das Element <code>&lt;ul&gt;</code> definiert eine
+ungeordnete Liste (<em>unordered list</em>). Diese enthält
+<code>&lt;li&gt;</code>-Elemente (<em>list item</em>). Ändere das
+entsprechende Template, sodass die Schüler nicht mehr als
+Listenelemente, sondern als Absätze (<code>&lt;p&gt;</code>:
+<em>paragraph</em>) dargestellt werden. Was musst Du dabei besonders
+beachten?</p>
+<p><strong>Aufgabe 3.3</strong>: Die Notenübersicht eines Schülers (z.B.
+für <a href="http://localhost:5000/pupils/Bettina">Bettina</a>) zeigt
+unten ein Formular, womit neue Noten eingetragen werden können. Die Note
+wird als normales Textfeld angezeigt. Was kannst Du in dieses Feld alles
+eintragen? Siehst Du hier ein mögliches Problem?</p>
+<p><strong>Aufgabe 3.4</strong>: Damit nur noch Zahlen als Noten
+eingetragen werden können, soll das entsprechende Textfeld
+(<code>&lt;input id="grade" ...</code>) durch ein numerisches
+Eingabefeld ersetzt werden. Schaue Dir die <a
+href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number">Dokumentation</a>
+zu diesem Feld an und nimm die entsprechende Anpassung im Template vor.
+Definiere sinnvolle Werte für die Attribute <code>min</code>,
+<code>max</code>, <code>step</code> und <code>value</code>. Welche
+Probleme können dadurch gelöst werden?</p>
+<h2 id="javascript-js-interaktives-verhalten-im-browser">JavaScript
+(JS): Interaktives Verhalten im Browser</h2>
+<p>CSS und HTML sind keine wirklichen Programmiersprachen, sondern
+Beschreibungssprachen. Mit Jinja2 hingegen kann man die Ausgabe von
+Webseiten aus programmieren Zusätzliche Interaktion im Browser kann mit
+einer weiteren Sprache gesteuert werden: JavaScript.</p>
+<p>In der Notenverwaltung kommt JavaScript nur an zwei Stellen vor: Beim
+Löschen eines Faches oder eines Schülers wird der Benutzer zunächst
+gefragt, ob er den Eintrag <em>wirklich</em> löschen will. So wird
+verhindert, dass der Benutzer aus Versehen Daten löscht.</p>
+<p><strong>Aufgabe 4.1</strong>: Öffne die Datei
+<code>static/script.js</code>. Versuche den Code zu verstehen und
+beschreibe stichwortartig, was hier ungefähr passieren könnte.</p>
+<p><strong>Aufgabe 4.2</strong>: Die Link-Elemente werden mithilfe der
+eingebauten Funktion <code>doc.querySelectorAll('a.delete')</code>
+ermittelt. Kommt Dir die Angabe <code>a.delete</code> bekannt vor? Wo
+gibt es ähnliche Bezeichnungen?</p>
+<p><strong>Aufgabe 4.3</strong>: Lösche die Zeile
+<code>e.preventDefault();</code> und lade die Notenverwaltung neu mit
+<code>[Ctrl]+[Shift]+[R]</code>, damit der JavaScript-Code sicher
+nachgeladen wird. Versuche nun ein paar Schüler zu löschen. Die
+entsprechende Bestätigung kannst Du einmal verneinen und einmal
+bestätigen. Was fällt Dir dabei auf? Was bedeutet
+“<code>preventDefault</code>” auf Deutsch übersetzt? Was für eine
+Bedeutung hat es? Was könnte das Ausrufezeichen (<code>!</code>) in der
+Zeile darüber bedeuten?</p>
+<h2
+id="structured-query-language-sql-zugriff-auf-datenbanken">Structured
+Query Language (SQL): Zugriff auf Datenbanken</h2>
+<p>Die Noten werden in einer sogenannten <em>relationalen Datenbank</em>
+abgespeichert. Eine relationale Datenbank besteht aus Tabellen (sog.
+<em>Relationen</em>), in denen man verschiedene Daten der gleichen
+Struktur ablegen kann. Oftmals stehen die einzelnen Tabellen in
+Beziehung (englisch: “in relation”) zueinander.</p>
+<p>Relationale Datenbanken werden mit einer Sprache namens SQL definiert
+und abgefragt. Es gibt verschiedene Befehle um die Datenstruktur zu
+definieren (DDL: <em>Data Definition Language</em>), Daten abzufragen
+(DQL: <em>Data Query Language</em>), Daten zu manipulieren (DML:
+<em>Data Manipulation Language</em>) und den Zugriff auf Daten zu
+kontrollieren (DCL: <em>Data Control Language</em>).</p>
+<p><strong>Aufgabe 5.1</strong>: Die Datei <code>tables.sql</code>
+enthält die Definition der Datenbanktabellen. Jede Tabelle hat einen
+Namen und mehrere Spalten. Eine Tabelle hat zusätzlich Beziehungen zu
+anderen Tabellen. Versuche diese Tabellen auf einem Blatt Papier
+aufzuzeichnen. Beispieldaten (zwei, drei pro Tabelle genügen) kannst Du
+erfinden und als Zeilen eintragen.</p>
+<p><strong>Aufgabe 5.2</strong>: Die Dateien <code>data.py</code> und
+<code>insert_test_data.py</code> enthalten zwar in erster Linie
+Python-Code (siehe nächstes Kapitel), dieser enthält aber wiederum
+SQL-Befehle. Suche Dir einige dieser Befehlszeilen heraus und überlege
+Dir, was mit diesen erreicht wird.</p>
+<p><strong>Aufgabe 5.3</strong>: Zu welcher Gruppe (DDL, DML, DQL, DCL)
+gehören die einzelnen Befehle? Begründe deine Aussage
+stichwortartig.</p>
+<h2 id="python-serverseitige-programmlogik">Python: Serverseitige
+Programmlogik</h2>
+<p>Der grösste Teil der Programmlogik einer Web-Anwendung wird nicht im
+Browser, sondern auf dem Server ausgeführt. So kann sichergestellt
+werden, dass die Logik für alle Benutzer gleich ist. Zudem hat der
+serverseitige Code direkten Zugriff auf die Datenbank, die auch auf dem
+Server abgelegt ist.</p>
+<p>Python unterstützt verschiedene Programmierstile: strukturiert,
+objektorientiert, funktional. Hier soll es zunächst um die strukturierte
+Programmierung gehen. Diese besteht u.a. aus den folgenden
+Elementen:</p>
+<ul>
+<li>Variablen: z.B. <code>a</code>, <code>length</code>,
+<code>result</code> oder <code>grade</code> mit verschiedenen Typen</li>
+<li>Anweisungen: z.B. <code>a = 3</code>, welche der Variablen
+<code>a</code> den Wert <code>3</code> zuweist</li>
+<li>Sequenzen: eine Reihe von Anweisungen, die hintereinander ausgeführt
+werden</li>
+<li>Entscheidungen: Anweisungen, die nur unter bestimmten Bedingungen
+ausgeführt werden</li>
+<li>Wiederholungen: Anweisungen, die mehrmals hintereinander ausgeführt
+werden</li>
+</ul>
+<p>Das folgende Programm kombiniert all diese Elemente:</p>
+<pre><code>eingabe = input(&quot;Wie viele Wiederholungen sind gewünscht? &quot;)
+wiederholungen = int(eingabe)
+if wiederholungen &lt;= 0:
+    print(&quot;Sie wünschen keine Wiederholungen&quot;)
+else:
+    while wiederholungen &gt; 0:
+        print(&quot;Es gibt noch&quot;, wiederholungen, &quot;Wiederholungen&quot;)
+        wiederholungen = wiederholungen - 1
+print(&quot;Jetzt ist Schluss!&quot;)</code></pre>
+<ul>
+<li>Das Programm verwendet die Variablen <code>eingabe</code> und
+<code>wiederholungen</code>.</li>
+<li>Es gibt verschiedene Anweisungen zur Eingabe (<code>input</code>),
+zur Ausgabe (<code>print</code>) und Zuweisungen (<code>=</code>).</li>
+<li>Die ersten beiden Anweisungen werden als Sequenz abgearbeitet.</li>
+<li>Die Prüfung, ob <code>wiederholungen</code> kleiner als 0 ist, ist
+eine Entscheidung: Je nach Ergebnis wird anderer Code ausgeführt.</li>
+<li>Mithilfe einer <code>while</code>-Schleife wird eine Wiederholung
+durchgeführt. Die Ausgabe der verbleibenden Wiederholungen und das
+Verkleinern des Wertes um eins wird bei jedem Durchlauf
+durchgeführt.</li>
+</ul>
+<p>Bei Python ist es wichtig, dass der Code, der zu einer Entscheidung
+oder Wiederholung gehört, immer gleich eingerückt wird.</p>
+<p><strong>Aufgabe 6.1</strong>: Das Projekt enthält vier Python-Dateien
+(Dateiendung <code>.py</code>). Öffne diese, überfliege den Code, und
+überlege Dir, was wohl in den verschiedenen Dateien passiert. Notiere
+deine Ideen stichwortartig.</p>
+<p><strong>Aufgabe 6.2</strong>: Villeicht hast Du beim überfliegen des
+Codes in den verschiedenen Dateien gemerkt, dass einige Code-Blöcke mit
+<code>def</code> beginnen. Kannst Du Dir vorstellen, was das bedeutet?
+Versuche zuerst selber zu überlegen, was das sein könnte. Notiere Deine
+Vermutungen. Danach kannst Du folgendes Kapitel über <a
+href="https://www.python-lernen.de/funktionen-in-python.htm">Python-Funktionen</a>
+lesen und Dir wichtige Sachen für die nächsten Aufgaben notieren.</p>
+<p><strong>Aufgabe 6.3</strong>: In der Datei
+<code>calculations.py</code> gibt es eine Funktion namens
+<code>calculate_deficiency_points</code>, welche die Mangelpunkte eines
+Schülers berechnet. Diese gibt immer den Wert <code>0.0</code> zurück.
+Die Funktion wurde noch nicht ausprogrammiert Lies die Anweisungen in
+der Funktion durch, und versuche, sie korrekt auszuprogrammieren. (Die
+Zeilen, die mit <code>#</code> beginnen, sind Kommentare, und werden
+nicht ausgeführt.) Um die Funktion zu testen kannst Du im <a
+href="http://localhost:5000/overview">Notenüberblick</a> einen Schüler
+mit ungenügenden Noten öffnen. Die Mangelpunkte sollten dann oberhalb
+des Titels <em>Note hinzufügen</em> angezeigt werden.</p>
+<p><strong>Aufgabe 6.4</strong>: Öffne die Datei <code>app.py</code>.
+Diese enthält verschiedene Funktionen, die jeweils mit der Zeile
+<code>@app.route</code> beginnen. Öffne die verschiedenen Seiten der <a
+href="http://localhost:5000/">Notenverwaltung</a> im Browser. Schaue Dir
+die Adresszeile genau an. Kannst Du anhand der Adresse die verschiedenen
+Seiten den verschiedenen Funktionen in <code>app.py</code> zuordnen?</p>
+<p><strong>Aufgabe 6.5</strong>: Du hast sicher bemerkt, dass sich in
+den verschiedenen Python-Dateien oben die sogenannten Imports von
+<em>Packages</em> (auf Deutsch <em>Module</em>) befinden. Erkläre kurz,
+was Imports sind, welche Arten es gibt und welche Regeln man befolgen
+muss. Hilfe findest Du auf der Seite über <a
+href="https://www.python-lernen.de/module-in-python.htm">Module in
+Python</a>,</p>
+<h2
+id="makefile-erzeugen-von-dateien-anhand-von-abhängigkeiten">Makefile:
+Erzeugen von Dateien anhand von Abhängigkeiten</h2>
+<p>Das Projekt enthält eine Datei namens <code>Makefile</code>. Diese
+Datei wird zum Erzeugen der Datenbank (<code>grades.db</code>) und des
+vorliegenden Dokuments verwendet.</p>
+<p><strong>Aufgabe 7.1</strong>: Zum Erstellen der Datenbank wird ein
+Python-Programm verwendet, das Du bereits kennengelernt hast. Um welche
+Python-Datei handelt es sich dabei?</p>
+<p><strong>Aufgabe 7.2</strong>: Die Tabellen werden mithilfe von
+<code>tables.sql</code> in reinem SQL erzeugt. Die Testdaten werden
+hingegen mit einem Python-Skript <code>insert_test_data.py</code>
+erzeugt. Warum wird nicht an beiden Stellen einfach SQL verwendet?</p>
+<h2
+id="shell-skripte-nützliche-helferlein-für-verschiedene-aufgaben">Shell-Skripte:
+Nützliche Helferlein für verschiedene Aufgaben</h2>
+<p>Das Projekt enthält zwei Dateien mit der Endung <code>.sh</code>:
+<code>run.sh</code> zum Ausführen der Web-Anwendung, und
+<code>install.sh</code> zum Installieren derselben. Dies sind kleine
+Skripte, mit denen verschiedene Abläufe automatisiert werden.</p>
+<p><strong>Aufgabe 8.1</strong>: Öffne die beiden Dateien. Findest Du
+darin Referenzen auf andere Dateien, die Du bereits kennst? Wenn ja,
+öffne diese, und notiere Dir die Dateinamen. Was enthalten diese
+Dateien?</p>
+<h2 id="ausblick">Ausblick</h2>
+<p>Du hast eine sehr kleine Web-Anwendung kennengelernt. Selbst ein
+erfahrener Programmierer benötigt ungefähr einen halben Arbeitstag, um
+so eine Anwendung zu erstellen. Damit eine solche Anwendung produktiv
+eingesetzt werden kann, benötigt es aber noch einiges an
+Zusatzaufwand.</p>
+<p><strong>Aufgabe 9.1</strong>: Was gefällt Dir an der Notenverwaltung?
+Was stört Dich an ihr? Würdest Du das Programm Deinen Lehrern empfehlen
+oder Ihnen davon abraten?</p>
+<p><strong>Aufgabe 9.2</strong>: Welche Probleme wären noch zu lösen, um
+die Notenverwaltung im Internet als Produkt (<em>«Software as a
+Service»</em>) anbieten zu können? Haben diese Probleme mit dem
+Programmieren oder mit anderen Tätigkeiten zu tun?</p>
+<h1 id="fazit">Fazit</h1>
+<p>Selbst eine triviale Web-Anwendung wie die Notenverwaltung basiert
+auf einer Vielzahl von Technologien: CSS, HTML, Jinja2, JavaScript, SQL,
+Python. Das <code>Makefile</code> und die Shell-Skripte erleichtern
+zudem den Alltag des Entwicklers.</p>
+<p>In den Übungen hast Du nicht nur diese Technologien kennengelernt,
+sondern auch eine Idee davon erhalten, wie diese Technologien
+zusammenarbeiten. Ein Web-Entwickler muss also nicht nur einzelne
+Technologien beherrschen, sondern auch wissen, in welchem Zusammenhang
+diese stehen.</p>
+<p>Eine Anwendung muss nicht nur entwickelt, sondern auch gewartet,
+betrieben und vermarktet werden. Ein Softwareentwickler muss auch in
+diesen Bereichen mithelfen.</p>
+</body>
+</html>
